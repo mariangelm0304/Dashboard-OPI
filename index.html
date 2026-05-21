@@ -2131,7 +2131,7 @@
 // CONFIGURACIÓN API - GOOGLE APPS SCRIPT
 // Pega aquí la URL de tu Apps Script Web App después de desplegarlo
 // ============================================================
-const API_URL = "https://script.google.com/macros/s/AKfycbxt_GurDHxSBHQkfGAqS1V9sdJlBu15UfgiqItovj0XQxGujTGqfH4Oit41eTwEVIwfIg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxt_GurDHxSBHQkfGAqS1V9sdJlBu15UfgiqItovj0XQxGujTGqfH4Oit41eTwEVIwfIg/exec"; // Google Apps Script - Dashboard Jamar
 
 // ============================================================
 // VARIABLES GLOBALES DE ESTADO
@@ -3340,7 +3340,7 @@ function cargarDatosGuardados() {
 // ============================================================
 async function cargarDatos() {
   // Si la URL no está configurada, usar datos locales (fallback)
-  if (!API_URL || API_URL === "https://script.google.com/macros/s/AKfycbxt_GurDHxSBHQkfGAqS1V9sdJlBu15UfgiqItovj0XQxGujTGqfH4Oit41eTwEVIwfIg/exec") {
+  if (!API_URL || API_URL === "PEGAR_URL_DE_TU_APPS_SCRIPT_AQUI") {
     console.info('[Dashboard] API no configurada. Usando datos locales.');
     // Los datos ya están en calidadData, inventarioData, pistoleoData
     renderDashboard();
