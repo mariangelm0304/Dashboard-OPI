@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Operativo · Muebles Jamar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rojo:#C8102E;--rojo-d:#9E0C24;--rojo-l:#FCEBED;
+  --verde:#2EB872;--verde-d:#1F8A55;--verde-l:#E3F5EC;
+  --am:#F4B73E;--am-d:#C68F1F;--am-l:#FDF3DE;
+  --naranja:#FF8C00;--naranja-d:#CC7000;--naranja-l:#FFE8CC;
+  --azul-r:#E63946;--azul-rd:#B12530;
+  --g9:#1F2937;--g7:#4B5563;--g5:#6B7280;--g3:#D1D5DB;--g1:#F3F4F6;--g0:#F9FAFB;
+  --bg:#F2F2F2;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-height:100vh;padding:14px}
+.wrap{max-width:1400px;margin:0 auto}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,var(--rojo),var(--rojo-d));border-radius:12px;padding:16px 24px;
+  color:#fff;display:flex;align-items:center;gap:18px;margin-bottom:14px;
+  box-shadow:0 4px 16px rgba(200,16,46,.2)}
+.logo{font-size:36px;font-weight:900;letter-spacing:-2px;font-style:italic}
+.hdiv{width:2px;height:40px;background:rgba(255,255,255,.3)}
+.htitle h1{font-size:18px;font-weight:800;letter-spacing:.5px}
+.htitle p{font-size:10px;opacity:.8;letter-spacing:1.5px;margin-top:2px}
+.hcontrols{margin-left:auto;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.hctrl{display:flex;flex-direction:column;gap:3px}
+.hctrl label{font-size:10px;opacity:.85;letter-spacing:1px;font-weight:600}
+.hctrl select,.hctrl button{background:rgba(255,255,255,.95);color:var(--g9);border:none;
+  padding:7px 12px;border-radius:8px;font-family:inherit;font-weight:600;font-size:12px;cursor:pointer}
+.btn-edit{background:rgba(255,255,255,.2)!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.4)!important;display:flex;align-items:center;gap:6px}
+.btn-edit:hover{background:rgba(255,255,255,.35)!important}
+
+/* TABS */
+.tabs{display:flex;gap:4px;background:#fff;border-radius:10px;padding:5px;
+  margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);overflow-x:auto}
+.tab{padding:9px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;
+  border:none;background:transparent;color:var(--g5);transition:all .2s;
+  white-space:nowrap;display:flex;align-items:center;gap:7px;font-family:inherit}
+.tab:hover{background:var(--g1);color:var(--g9)}
+.tab.active{background:var(--rojo);color:#fff;box-shadow:0 2px 8px rgba(200,16,46,.25)}
+
+/* SECTIONS */
+.sec{display:none}.sec.active{display:block;animation:fi .25s}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* KPI ROW */
+.krow{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-bottom:14px}
+.krow4{grid-template-columns:repeat(4,1fr)}
+.kpi{background:#fff;border-radius:10px;padding:14px 16px;display:flex;
+  align-items:center;gap:13px;box-shadow:0 1px 3px rgba(0,0,0,.04);
+  border:1px solid var(--g1);transition:transform .2s,box-shadow .2s}
+.kpi:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.kicon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:20px;flex-shrink:0}
+.kr{background:var(--rojo-l);color:var(--rojo)}
+.kg{background:var(--verde-l);color:var(--verde-d)}
+.ky{background:var(--am-l);color:var(--am-d)}
+.ko{background:var(--naranja-l);color:var(--naranja-d)}
+.kgr{background:var(--g1);color:var(--g7)}
+.klbl{font-size:10px;color:var(--g5);letter-spacing:1px;font-weight:600;text-transform:uppercase;margin-bottom:2px}
+.kval{font-size:24px;font-weight:800;line-height:1}
+.ksub{font-size:11px;color:var(--g5);margin-top:3px;font-weight:500}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 370px;gap:14px;margin-bottom:14px}
+.g2b{display:grid;grid-template-columns:1fr 370px;gap:14px}
+.gp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+
+/* CARD */
+.card{background:#fff;border-radius:11px;overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,.04);border:1px solid var(--g1)}
+.card+.card{margin-top:14px}
+.chdr{background:#FDF5F6;padding:9px 15px;border-bottom:1px solid var(--rojo-l);
+  display:flex;justify-content:space-between;align-items:center}
+.chdr h3{font-size:10px;font-weight:700;color:var(--rojo-d);letter-spacing:1.2px;text-transform:uppercase}
+.cbdy{padding:15px}
+.finfo{font-size:10px;color:var(--rojo-d);background:#fff;padding:3px 8px;
+  border-radius:4px;font-weight:600;border:1px solid var(--rojo-l)}
+
+/* LEYENDA */
+.ley{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;font-size:11px;color:var(--g7);font-weight:500}
+.ley span{display:flex;align-items:center;gap:5px}
+.ldot{width:9px;height:9px;border-radius:50%}
+
+/* BARRAS */
+.bwrap{max-height:440px;overflow-y:auto;padding-right:6px}
+.bwrap::-webkit-scrollbar{width:5px}
+.bwrap::-webkit-scrollbar-thumb{background:var(--g3);border-radius:3px}
+.btbl{width:100%;border-collapse:collapse}
+.btbl thead th{font-size:10px;color:var(--g5);letter-spacing:1px;font-weight:700;
+  text-align:left;padding:5px 9px;border-bottom:1px solid var(--g1);text-transform:uppercase}
+.btbl tbody td{padding:6px 9px;border-bottom:1px solid var(--g0);font-size:12px}
+.btbl tbody td:first-child{font-weight:600;color:var(--g9);width:130px}
+.btbl tbody tr{cursor:pointer;position:relative}
+.btbl tbody tr:hover td{background:var(--g0)}
+.bbg{height:15px;background:var(--g1);border-radius:4px;overflow:hidden;width:100%;min-width:220px}
+.bfill{height:100%;border-radius:4px;transition:width .5s ease}
+.bfill.verde{background:linear-gradient(90deg,var(--verde),var(--verde-d))}
+.bfill.amarillo{background:linear-gradient(90deg,var(--am),var(--am-d))}
+.bfill.naranja{background:linear-gradient(90deg,var(--naranja),var(--naranja-d))}
+.bfill.rojo{background:linear-gradient(90deg,var(--azul-r),var(--azul-rd))}
+.bfill.rojo-dark{background:linear-gradient(90deg,var(--azul-rd),#7a1820)}
+.bfill.pendiente{background:repeating-linear-gradient(45deg,#D1D5DB,#D1D5DB 5px,#E5E7EB 5px,#E5E7EB 10px)}
+
+/* DONA */
+.dwrap{position:relative;height:190px;margin-bottom:10px}
+.dstats{display:flex;flex-direction:column;gap:5px}
+.dstat{display:flex;align-items:center;gap:7px;font-size:12px;padding:3px 0}
+.dsdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dslbl{color:var(--g7);flex:1}
+.dsval{font-weight:700;color:var(--g9)}
+.dspct{color:var(--g5);font-size:11px;min-width:48px;text-align:right}
+
+/* NOVEDADES */
+.novlist{max-height:210px;overflow-y:auto;padding-right:6px}
+.novlist::-webkit-scrollbar{width:5px}
+.novlist::-webkit-scrollbar-thumb{background:var(--g3);border-radius:3px}
+.nov{display:flex;gap:9px;padding:9px 0;border-bottom:1px dashed var(--g1)}
+.nov:last-child{border-bottom:none}
+.novdot{width:8px;height:8px;border-radius:50%;margin-top:4px;flex-shrink:0}
+.novdot.verde{background:var(--verde)}
+.novdot.amarillo{background:var(--am)}
+.novdot.naranja{background:var(--naranja)}
+.novdot.rojo{background:var(--azul-r)}
+.novdot.rojo-dark{background:var(--azul-rd)}
+.novdot.pendiente{background:var(--g3)}
+.novtienda{font-weight:700;color:var(--g9);font-size:12px;margin-bottom:2px}
+.novtienda small{color:var(--g5);font-weight:500;margin-left:5px;font-size:10px}
+.novtxt{font-size:11px;color:var(--g7)}
+.empty{text-align:center;padding:24px;color:var(--g5);font-size:12px}
+
+/* GAUGE */
+.gwrap{position:relative;width:100%;height:155px;display:flex;align-items:center;justify-content:center}
+.gcenter{position:absolute;top:50%;left:50%;transform:translate(-50%,-10%);text-align:center}
+.gval{font-size:28px;font-weight:800;color:var(--rojo);line-height:1}
+.glbl{font-size:10px;color:var(--g5);margin-top:3px;letter-spacing:.3px}
+.gaxis{display:flex;justify-content:space-between;font-size:10px;color:var(--g5);margin-top:-6px;padding:0 22px}
+
+/* DIST CHART */
+.dchwrap{position:relative;height:175px}
+
+/* HEAT TABLE PISTOLEO */
+.heat{width:100%;border-collapse:separate;border-spacing:1px;font-size:10px}
+.heat th{background:var(--g9);color:#fff;padding:5px 4px;font-weight:600;text-align:center;font-size:10px}
+.heat td{padding:3px 2px;text-align:center;border-radius:2px}
+.heat td.tn{background:#fff;text-align:left;font-weight:600;font-size:11px;padding:3px 7px;white-space:nowrap}
+.heat td.ag{background:var(--g0);font-weight:600;color:var(--g5)}
+.heat td.hv{background:var(--verde-l);color:var(--verde-d);font-weight:600}
+.heat td.hy{background:var(--am-l);color:var(--am-d);font-weight:600}
+.heat td.hr{background:var(--rojo-l);color:var(--azul-rd);font-weight:600}
+.heat td.he{background:#f8d7da;color:#888}
+.heat td.hp{background:var(--g9);color:#fff;font-weight:700}
+
+/* TOOLTIP */
+.tip{position:fixed;background:var(--g9);color:#fff;padding:9px 13px;border-radius:8px;
+  font-size:12px;pointer-events:none;z-index:9999;box-shadow:0 4px 14px rgba(0,0,0,.3);
+  opacity:0;transition:opacity .15s;max-width:270px;line-height:1.5}
+.tip.show{opacity:1}
+.tip strong{display:block;margin-bottom:3px;font-size:13px}
+.tip .tl{color:#aaa;font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-top:5px}
+.tip .tv{color:#fff}
+
+/* MODAL EDITOR */
+.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);
+  z-index:10000;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.mcont{background:#fff;border-radius:13px;width:100%;max-width:1180px;
+  max-height:92vh;display:flex;flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.mhdr{background:linear-gradient(135deg,var(--rojo),var(--rojo-d));color:#fff;
+  padding:15px 22px;border-radius:13px 13px 0 0;
+  display:flex;justify-content:space-between;align-items:center}
+.mhdr h2{font-size:17px;font-weight:700;display:flex;align-items:center;gap:9px}
+.mclose{background:none;border:none;color:#fff;font-size:26px;cursor:pointer;
+  padding:0 6px;line-height:1;font-family:inherit}
+.mclose:hover{opacity:.7}
+.mtabs{display:flex;gap:3px;padding:11px 22px 0;background:#fff;border-bottom:1px solid var(--g1)}
+.mtab{padding:9px 17px;border:none;background:transparent;color:var(--g5);
+  font-weight:600;font-size:13px;cursor:pointer;border-bottom:3px solid transparent;
+  font-family:inherit;transition:all .15s}
+.mtab.active{color:var(--rojo);border-bottom-color:var(--rojo)}
+.mtab:hover{color:var(--g9)}
+.mbody{flex:1;overflow:auto;padding:18px 22px;background:var(--g0)}
+.msec{display:none}.msec.active{display:block}
+.mctrl{display:flex;align-items:center;gap:11px;margin-bottom:14px;
+  padding:11px 15px;background:#fff;border-radius:8px;border:1px solid var(--g1);flex-wrap:wrap}
+.mctrl label{font-size:12px;color:var(--g7);font-weight:600}
+.mctrl select{padding:5px 9px;border:1px solid var(--g3);border-radius:5px;font-family:inherit;font-size:12px}
+.mftr{background:#fff;padding:13px 22px;border-top:1px solid var(--g1);
+  border-radius:0 0 13px 13px;display:flex;gap:9px;justify-content:flex-end;align-items:center}
+.mftr-left{margin-right:auto;font-size:12px;color:var(--g5)}
+
+/* BOTONES */
+.btn{padding:7px 14px;border:none;border-radius:6px;font-family:inherit;
+  font-weight:600;font-size:12px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:5px;transition:all .15s}
+.btn-p{background:var(--rojo);color:#fff}.btn-p:hover{background:var(--rojo-d)}
+.btn-g{background:var(--verde);color:#fff}.btn-g:hover{background:var(--verde-d)}
+.btn-s{background:var(--g1);color:var(--g7)}.btn-s:hover{background:var(--g3)}
+.btn-w{background:#fff;color:var(--azul-rd);border:1px solid var(--rojo-l)}.btn-w:hover{background:var(--rojo-l)}
+
+/* TABLA EDITOR */
+.etbl-wrap{background:#fff;border-radius:8px;border:1px solid var(--g1);overflow:auto;max-height:calc(92vh - 280px)}
+.etbl{width:100%;border-collapse:collapse;font-size:12px}
+.etbl thead th{background:var(--g9);color:#fff;padding:7px 9px;text-align:left;
+  font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.5px;
+  position:sticky;top:0;z-index:1}
+.etbl tbody td{padding:5px 9px;border-bottom:1px solid var(--g1)}
+.etbl tbody tr:hover td{background:var(--g0)}
+.etbl input,.etbl select{padding:4px 7px;border:1px solid var(--g3);border-radius:4px;
+  font-family:inherit;font-size:12px;width:100%}
+.etbl input[type=number]{width:65px}
+
+/* TOAST */
+.toast{position:fixed;top:22px;right:22px;padding:11px 18px;border-radius:8px;
+  font-weight:600;font-size:13px;z-index:20000;box-shadow:0 4px 14px rgba(0,0,0,.2);
+  opacity:0;transform:translateY(-8px);transition:all .25s;background:var(--verde-d);color:#fff}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.err{background:var(--azul-r)}
+
+/* BADGE */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;
+  border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase}
+.badge.verde{background:var(--verde-l);color:var(--verde-d)}
+.badge.amarillo{background:var(--am-l);color:var(--am-d)}
+.badge.naranja{background:var(--naranja-l);color:var(--naranja-d)}
+.badge.rojo{background:var(--rojo-l);color:var(--azul-rd)}
+.badge.rojo-dark{background:#f8d7da;color:var(--azul-rd)}
+.badge.pendiente{background:var(--g1);color:var(--g5)}
+
+/* AYUDA EDITOR */
+.help-bx{background:#fff;padding:20px;border-radius:8px;border:1px solid var(--g1)}
+.help-bx h3{color:var(--rojo);margin-bottom:12px;font-size:17px}
+.help-bx h4{color:var(--g9);margin:15px 0 6px;font-size:13px}
+.help-bx ul,.help-bx ol{margin-left:18px}
+.help-bx li{margin:5px 0;font-size:13px;line-height:1.5;color:var(--g7)}
+.help-bx p{font-size:13px;line-height:1.5;color:var(--g7);margin:6px 0}
+.help-bx code{background:var(--g1);padding:1px 5px;border-radius:3px;font-size:11px;color:var(--rojo-d)}
+.dot-v,.dot-y,.dot-rd,.dot-r,.dot-p{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:3px;vertical-align:middle}
+.dot-v{background:var(--verde)}.dot-y{background:var(--am)}.dot-rd{background:var(--azul-rd)}.dot-r{background:var(--azul-r)}.dot-p{background:var(--g3)}
+
+/* IMPORT */
+.imp-step{padding:14px 0;border-bottom:1px dashed var(--g1)}
+.imp-step:last-child{border:none}
+.imp-step h4{color:var(--g9);margin-bottom:7px;font-size:14px}
+.imp-step p{font-size:13px;color:var(--g7);margin-bottom:8px;line-height:1.5}
+.info-bx{background:var(--g0);padding:9px 13px;border-radius:6px;font-size:12px;
+  color:var(--g7);border-left:3px solid var(--rojo);line-height:1.6}
+.imp-ok{background:var(--verde-l);color:var(--verde-d);padding:11px 13px;border-radius:6px;font-size:13px;border-left:3px solid var(--verde-d);margin-top:10px}
+.imp-err{background:var(--rojo-l);color:var(--azul-rd);padding:11px 13px;border-radius:6px;font-size:13px;border-left:3px solid var(--azul-rd);margin-top:10px}
+
+@media(max-width:1100px){.g2,.g2b,.gp{grid-template-columns:1fr}.krow{grid-template-columns:repeat(2,1fr)}.krow4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.krow,.krow4{grid-template-columns:1fr}.hdr{flex-wrap:wrap}.hcontrols{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="logo">jamar</div>
+  <div class="hdiv"></div>
+  <div class="htitle">
+    <i class="ti ti-dashboard" style="font-size:20px;opacity:.85"></i>
+    <div>
+      <h1 id="tab-titulo">DASHBOARD OPERATIVO</h1>
+      <p>SEGUIMIENTO · MAYO 2026</p>
+    </div>
+  </div>
+  <div class="hcontrols">
+    <div class="hctrl" id="ctrl-semana" style="display:none">
+      <label>SEMANA</label>
+      <select id="f-sem" onchange="aplicar()">
+        <option value="todas">Todas</option>
+        <option value="1" selected>Semana 1</option>
+        <option value="2">Semana 2</option>
+        <option value="3">Semana 3</option>
+        <option value="4">Semana 4</option>
+      </select>
+    </div>
+    <div class="hctrl" id="ctrl-pist" style="display:none">
+      <label>SEMANA PISTOLEO</label>
+      <select id="f-spist" onchange="aplicar()">
+        <option value="todas">Todas</option>
+      </select>
+    </div>
+    <div class="hctrl">
+      <label>ZONA</label>
+      <select id="f-zona" onchange="aplicar()">
+        <option value="todas">Todas</option>
+        <option value="Atlántico">Atlántico</option>
+        <option value="Caribe">Caribe</option>
+        <option value="Centro">Centro</option>
+        <option value="Bogotá">Bogotá</option>
+      </select>
+    </div>
+    <div class="hctrl">
+      <label>&nbsp;</label>
+      <button class="btn-edit" onclick="abrirEditor()">
+        <i class="ti ti-edit"></i> Editar datos
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="cambiarTab('inv',this)"><i class="ti ti-package"></i> Inventario Cíclico</button>
+  <button class="tab" onclick="cambiarTab('cal',this)"><i class="ti ti-clipboard-check"></i> Bitácoras de Calidad</button>
+  <button class="tab" onclick="cambiarTab('pist',this)"><i class="ti ti-scan"></i> Seguimiento de Pistoleo</button>
+</div>
+
+<!-- ========== INVENTARIO ========== -->
+<div id="sec-inv" class="sec active">
+  <div class="krow" id="kpi-inv"></div>
+  <div class="g2">
+    <div class="card">
+      <div class="chdr"><h3>ESTADO POR TIENDA</h3><span class="finfo" id="finfo-inv">Semana 1</span></div>
+      <div class="cbdy">
+        <div class="ley">
+          <span><span class="ldot" style="background:var(--verde)"></span>Reportó + Cierre 100%</span>
+          <span><span class="ldot" style="background:var(--naranja)"></span>Cierre parcial</span>
+          <span><span class="ldot" style="background:var(--am)"></span>Vacaciones</span>
+          <span><span class="ldot" style="background:var(--azul-r)"></span>Sin reporte</span>
+          <span><span class="ldot" style="background:var(--g3)"></span>Pendiente</span>
+          <span style="margin-left:auto;font-size:10px;color:var(--g5);font-style:italic"><i class="ti ti-info-circle"></i> Pasa el mouse sobre la barra</span>
+        </div>
+        <div class="bwrap"><table class="btbl"><thead><tr><th>TIENDA</th><th>ESTADO</th></tr></thead><tbody id="barras-inv"></tbody></table></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="chdr"><h3>RESUMEN <span style="font-weight:400;text-transform:none">(sin vacaciones)</span></h3></div>
+        <div class="cbdy">
+          <div class="dwrap"><canvas id="dona-inv"></canvas></div>
+          <div class="dstats" id="dstats-inv"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chdr"><h3>NOVEDADES</h3></div>
+        <div class="cbdy"><div class="novlist" id="nov-inv"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="g2b">
+    <div class="card">
+      <div class="chdr"><h3>DISTRIBUCIÓN POR ESTADO</h3></div>
+      <div class="cbdy"><div class="dchwrap"><canvas id="dist-inv"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="chdr"><h3>CUMPLIMIENTO (%)</h3></div>
+      <div class="cbdy">
+        <div class="gwrap"><canvas id="gauge-inv" width="270" height="150"></canvas>
+          <div class="gcenter"><div class="gval" id="gval-inv">0%</div><div class="glbl" id="glbl-inv">Reportaron / elegibles</div></div>
+        </div>
+        <div class="gaxis"><span>0%</span><span>100%</span></div>
+        <div style="text-align:center;margin-top:6px;font-size:10px;color:var(--g5)"><i class="ti ti-calculator"></i> Reportaron / (Total − Vacaciones − Pendientes)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CALIDAD ========== -->
+<div id="sec-cal" class="sec">
+  <div class="krow" id="kpi-cal"></div>
+  <div class="g2">
+    <div class="card">
+      <div class="chdr"><h3>ESTADO POR TIENDA</h3><span class="finfo" id="finfo-cal">Semana 1</span></div>
+      <div class="cbdy">
+        <div class="ley">
+          <span><span class="ldot" style="background:var(--verde)"></span>Con reporte</span>
+          <span><span class="ldot" style="background:var(--am)"></span>Novedad</span>
+          <span><span class="ldot" style="background:var(--azul-rd)"></span>No envió</span>
+          <span><span class="ldot" style="background:var(--azul-r)"></span>Sin técnico</span>
+          <span><span class="ldot" style="background:var(--g3)"></span>Pendiente</span>
+          <span style="margin-left:auto;font-size:10px;color:var(--g5);font-style:italic"><i class="ti ti-info-circle"></i> Pasa el mouse sobre la barra</span>
+        </div>
+        <div class="bwrap"><table class="btbl"><thead><tr><th>TIENDA</th><th>ESTADO</th></tr></thead><tbody id="barras-cal"></tbody></table></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="chdr"><h3>RESUMEN <span style="font-weight:400;text-transform:none">(sin técnicos sin asignar)</span></h3></div>
+        <div class="cbdy">
+          <div class="dwrap"><canvas id="dona-cal"></canvas></div>
+          <div class="dstats" id="dstats-cal"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chdr"><h3>NOVEDADES</h3></div>
+        <div class="cbdy"><div class="novlist" id="nov-cal"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="g2b">
+    <div class="card">
+      <div class="chdr"><h3>DISTRIBUCIÓN POR ESTADO</h3></div>
+      <div class="cbdy"><div class="dchwrap"><canvas id="dist-cal"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="chdr"><h3>CUMPLIMIENTO (%)</h3></div>
+      <div class="cbdy">
+        <div class="gwrap"><canvas id="gauge-cal" width="270" height="150"></canvas>
+          <div class="gcenter"><div class="gval" id="gval-cal">0%</div><div class="glbl" id="glbl-cal">Con reporte / elegibles</div></div>
+        </div>
+        <div class="gaxis"><span>0%</span><span>100%</span></div>
+        <div style="text-align:center;margin-top:6px;font-size:10px;color:var(--g5)"><i class="ti ti-calculator"></i> Con reporte / (Total − Sin técnico − Pendientes)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PISTOLEO ========== -->
+<div id="sec-pist" class="sec">
+  <div class="krow krow4" id="kpi-pist"></div>
+  <div class="gp">
+    <div class="card">
+      <div class="chdr"><h3>RANKING DE TIENDAS</h3><span class="finfo" id="finfo-pist">Todas</span></div>
+      <div class="cbdy">
+        <div class="ley">
+          <span><span class="ldot" style="background:var(--verde)"></span>Alto</span>
+          <span><span class="ldot" style="background:var(--am)"></span>Medio</span>
+          <span><span class="ldot" style="background:var(--azul-r)"></span>Bajo</span>
+          <span style="margin-left:auto;font-size:10px;color:var(--g5);font-style:italic"><i class="ti ti-info-circle"></i> Pasa el mouse</span>
+        </div>
+        <div class="bwrap" id="rank-pist"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chdr"><h3>TOP 10 TIENDAS</h3></div>
+      <div class="cbdy"><div style="position:relative;height:360px"><canvas id="top-pist"></canvas></div></div>
+    </div>
+  </div>
+  <div class="g2b" style="grid-template-columns:300px 1fr">
+    <div class="card">
+      <div class="chdr"><h3>COBERTURA</h3></div>
+      <div class="cbdy">
+        <div class="gwrap"><canvas id="gauge-pist" width="260" height="145"></canvas>
+          <div class="gcenter"><div class="gval" id="gval-pist" style="color:var(--verde-d)">0%</div><div class="glbl">Tiendas con reporte</div></div>
+        </div>
+        <div class="gaxis"><span>0%</span><span>100%</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chdr"><h3>EVOLUCIÓN SEMANAL</h3></div>
+      <div class="cbdy"><div style="position:relative;height:185px"><canvas id="evol-pist"></canvas></div></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="chdr"><h3>DETALLE SEMANAL POR TIENDA</h3><span class="finfo" id="finfo-heat">Todas</span></div>
+    <div class="cbdy" style="overflow-x:auto"><table class="heat" id="heat-pist"></table></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--rojo);color:#fff;padding:11px 18px;border-radius:8px;margin-top:14px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;font-size:11px;font-weight:500">
+  <span><i class="ti ti-calendar"></i> &nbsp;Reporte: Mayo 2026</span>
+  <span>Bitácoras de Calidad · Inventario Cíclico · Seguimiento de Pistoleo · Muebles Jamar</span>
+</div>
+</div><!-- /wrap -->
+
+<!-- TOOLTIP -->
+<div class="tip" id="tip"></div>
+
+<!-- ========== MODAL EDITOR ========== -->
+<div class="modal" id="modal">
+  <div class="mcont">
+    <div class="mhdr">
+      <h2><i class="ti ti-edit"></i> Editor de Datos</h2>
+      <button class="mclose" onclick="cerrarEditor()">&times;</button>
+    </div>
+    <div class="mtabs">
+      <button class="mtab active" onclick="cambiarMTab('m-inv',this)">Inventario</button>
+      <button class="mtab" onclick="cambiarMTab('m-cal',this)">Calidad</button>
+      <button class="mtab" onclick="cambiarMTab('m-pist',this)">Pistoleo</button>
+      <button class="mtab" onclick="cambiarMTab('m-imp',this)"><i class="ti ti-upload"></i> Importar Excel</button>
+      <button class="mtab" onclick="cambiarMTab('m-help',this)"><i class="ti ti-help"></i> Ayuda</button>
+    </div>
+    <div class="mbody">
+
+      <!-- INVENTARIO EDITOR -->
+      <div id="m-inv" class="msec active">
+        <div class="mctrl">
+          <label>Semana:</label>
+          <select id="e-inv-sem">
+            <option value="1">Semana 1</option>
+            <option value="2">Semana 2</option>
+            <option value="3">Semana 3</option>
+            <option value="4">Semana 4</option>
+          </select>
+          <button class="btn btn-p" onclick="cargarEditorInv()"><i class="ti ti-refresh"></i> Cargar</button>
+        </div>
+        <div class="etbl-wrap">
+          <table class="etbl">
+            <thead><tr>
+              <th>Tienda</th><th>Coordinador</th><th>Estado</th>
+              <th>Fecha</th><th>Bodega</th><th>Fotos</th><th>Novedad</th>
+            </tr></thead>
+            <tbody id="e-inv-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CALIDAD EDITOR -->
+      <div id="m-cal" class="msec">
+        <div class="mctrl">
+          <label>Semana:</label>
+          <select id="e-cal-sem">
+            <option value="1">Semana 1</option>
+            <option value="2">Semana 2</option>
+            <option value="3">Semana 3</option>
+            <option value="4">Semana 4</option>
+          </select>
+          <button class="btn btn-p" onclick="cargarEditorCal()"><i class="ti ti-refresh"></i> Cargar</button>
+        </div>
+        <div class="etbl-wrap">
+          <table class="etbl">
+            <thead><tr>
+              <th>Zona</th><th>Tienda</th><th>Técnico</th>
+              <th>Estado</th><th>Fecha</th><th>Novedad</th>
+            </tr></thead>
+            <tbody id="e-cal-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PISTOLEO EDITOR -->
+      <div id="m-pist" class="msec">
+        <div class="mctrl">
+          <span style="font-size:12px;color:var(--g7)">Total semanas: <strong id="e-pist-total">0</strong></span>
+          <button class="btn btn-p" onclick="agregarSemPist()"><i class="ti ti-plus"></i> Agregar semana</button>
+        </div>
+        <div class="etbl-wrap" style="max-height:calc(92vh - 260px);overflow:auto">
+          <table class="etbl" id="e-pist-tbl"></table>
+        </div>
+      </div>
+
+      <!-- IMPORTAR EXCEL -->
+      <div id="m-imp" class="msec">
+        <div style="background:#fff;padding:18px;border-radius:8px;border:1px solid var(--g1)">
+          <div class="imp-step">
+            <h4>&#128202; Paso 1 — Descargar plantilla</h4>
+            <p>Descarga el Excel con la estructura correcta de las 3 secciones.</p>
+            <button class="btn btn-p" onclick="descargarPlantilla()"><i class="ti ti-download"></i> Descargar plantilla Excel</button>
+            &nbsp;
+            <button class="btn btn-s" onclick="exportarDatosActuales()"><i class="ti ti-database-export"></i> Exportar datos actuales</button>
+          </div>
+          <div class="imp-step">
+            <h4>&#128196; Paso 2 — Llenar datos en Excel</h4>
+            <p>Edita las hojas <strong>Calidad</strong>, <strong>Inventario</strong> y <strong>Pistoleo</strong>.</p>
+            <div class="info-bx">
+              <strong>Calidad:</strong> zona | tienda | tecnico | semana | estado | fecha | novedad<br>
+              <strong>Inventario:</strong> zona | tienda | coord | semana | reporto | fecha | bodega | cierre100 | fotos | novedad<br>
+              <strong>Pistoleo:</strong> ag | nombre | zona | S1 | S2 | ... | S19<br>
+              <br><strong>Estado calidad:</strong> verde · amarillo · rojo · rojo-dark · pendiente<br>
+              <strong>Reporto inventario:</strong> si · no · vacaciones · pendiente
+            </div>
+          </div>
+          <div class="imp-step">
+            <h4>&#128228; Paso 3 — Cargar Excel</h4>
+            <input type="file" id="excel-file" accept=".xlsx,.xls" onchange="importarExcel(event)" style="display:none">
+            <button class="btn btn-g" onclick="document.getElementById('excel-file').click()"><i class="ti ti-file-upload"></i> Seleccionar archivo Excel</button>
+            <div id="imp-result" style="margin-top:12px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AYUDA -->
+      <div id="m-help" class="msec">
+        <div class="help-bx">
+          <h3>Cómo usar el editor</h3>
+          <h4>&#128203; Calidad e Inventario</h4>
+          <ol>
+            <li>Selecciona la semana (1, 2, 3 o 4) y haz clic en <strong>"Cargar"</strong></li>
+            <li>Modifica los campos que necesites en la tabla</li>
+            <li>Haz clic en <strong>"Guardar cambios"</strong> (abajo)</li>
+            <li>El dashboard se actualiza automáticamente</li>
+          </ol>
+          <h4>&#127919; Estados de Calidad</h4>
+          <ul>
+            <li><span class="dot-v"></span><strong>verde</strong> — Con reporte enviado</li>
+            <li><span class="dot-y"></span><strong>amarillo</strong> — Novedad o motivo</li>
+            <li><span class="dot-rd"></span><strong>rojo-dark</strong> — No envió reporte</li>
+            <li><span class="dot-r"></span><strong>rojo</strong> — Sin técnico asignado</li>
+            <li><span class="dot-p"></span><strong>pendiente</strong> — Semana aún no ocurrida</li>
+          </ul>
+          <h4>&#128230; Estados de Inventario</h4>
+          <ul>
+            <li><strong>si</strong> — Reportó (ingresa si hubo cierre 100% o parcial en Bodega)</li>
+            <li><strong>no</strong> — No reportó</li>
+            <li><strong>vacaciones</strong> — Coordinador en vacaciones (no aplica)</li>
+            <li><strong>pendiente</strong> — Semana aún no ocurrida</li>
+          </ul>
+          <h4>&#128202; Pistoleo</h4>
+          <p>Haz clic en <strong>"Agregar semana"</strong> para agregar S20, S21, etc. Ingresa el conteo de cada tienda. Deja vacío si no hay dato.</p>
+          <h4>&#128190; Persistencia</h4>
+          <p>Los cambios se guardan automáticamente en tu navegador. Si subes un archivo nuevo a GitHub, el sistema detecta la nueva versión y carga esos datos. Usa <strong>"Descargar archivo actualizado"</strong> para compartir tus cambios con el equipo.</p>
+        </div>
+      </div>
+
+    </div><!-- /mbody -->
+    <div class="mftr">
+      <span class="mftr-left" id="save-status"></span>
+      <button class="btn btn-w" onclick="resetearDatos()"><i class="ti ti-refresh"></i> Resetear datos</button>
+      <button class="btn btn-g" onclick="guardarCambios()"><i class="ti ti-device-floppy"></i> Guardar cambios</button>
+      <button class="btn btn-p" onclick="descargarHTML()"><i class="ti ti-download"></i> Descargar archivo actualizado</button>
+      <button class="btn btn-s" onclick="cerrarEditor()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<script>
+// ================================================================
+// DATOS HARDCODEADOS - MAYO 2026
+// Estos son los datos base del archivo.
+// El sistema de versión detecta si hay datos editados guardados.
+// ================================================================
+const calidad = [
+  {zona:'Atlántico', tienda:'PRINCIPAL', tecnico:'Carlos Gonzalez',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Atlántico', tienda:'HIPER', tecnico:'Yirman Ladeo',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Atlántico', tienda:'NORTE', tecnico:'Leandro Madrid',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Atlántico', tienda:'TRINITARIAS', tecnico:'Marlon Toledo',
+    semanas: {1:{estado:'verde',fecha:'7/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Atlántico', tienda:'SANTA MARTA', tecnico:'Yesid Blanco',
+    semanas: {1:{estado:'rojo-dark',fecha:'—',nov:'No envió reporte semana 1'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Caribe', tienda:'SAN FELIPE', tecnico:'Angel Vega 50%',
+    semanas: {1:{estado:'verde',fecha:'7/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Caribe', tienda:'4VIENTOS', tecnico:'Henry Coordinador',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Caribe', tienda:'PLAZUELA', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Caribe', tienda:'MONTERIA', tecnico:'Jose Campo',
+    semanas: {1:{estado:'rojo-dark',fecha:'—',nov:'No envió reporte semana 1'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Caribe', tienda:'VALLEDUPAR', tecnico:'Esteban Silvera',
+    semanas: {1:{estado:'verde',fecha:'5/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Caribe', tienda:'SINCELEJO', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Caribe', tienda:'RIOHACHA', tecnico:'Davinson Melo',
+    semanas: {1:{estado:'amarillo',fecha:'—',nov:'Vacaciones'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Centro', tienda:'CACIQUE', tecnico:'Arnulfo Mendez',
+    semanas: {1:{estado:'verde',fecha:'7/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Centro', tienda:'MAYORCA', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Centro', tienda:'MOLINOS', tecnico:'Edward Montoya',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Centro', tienda:'FLORIDA', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Centro', tienda:'FABRICATO', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Bogotá', tienda:'AMERICAS', tecnico:'Oscar Pabon',
+    semanas: {1:{estado:'verde',fecha:'8/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Bogotá', tienda:'BOGOTA NORTE', tecnico:'Juan Restrepo',
+    semanas: {1:{estado:'verde',fecha:'7/05/2026'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Bogotá', tienda:'EDEN', tecnico:'Kevin Nicanor',
+    semanas: {1:{estado:'rojo-dark',fecha:'—',nov:'No envió reporte semana 1'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
+  {zona:'Bogotá', tienda:'CRA 30', tecnico:'Sin Técnico',
+    semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+];
+
+const inventario = [
+  {zona:'Caribe', tienda:'VALLEDUPAR', coord:'Ricardo Suarez Gamez',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Caribe', tienda:'MONTERIA', coord:'Arnold Julio',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Sin info',cierre100:false,fotos:'No',nov:'Sin info de bodega ni fotos'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Caribe', tienda:'SINCELEJO', coord:'Yorlan Carmona',
+    semanas: {1:{reporto:'vacaciones',nov:'Vacaciones del 20 Abril al 7 de Mayo'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Atlántico', tienda:'4VIENTOS', coord:'Henry Vergara',
+    semanas: {1:{reporto:true,fecha:'100%',bodega:'Disponible',cierre100:true,fotos:'Si',nov:'Vacaciones del 9 al 29 Mayo'}, 2:{reporto:'vacaciones',nov:'Vacaciones 9-29 Mayo'}, 3:{reporto:'vacaciones',nov:'Vacaciones 9-29 Mayo'}, 4:{reporto:'vacaciones',nov:'Vacaciones 9-29 Mayo'}}},
+  {zona:'Centro', tienda:'MAYORCA', coord:'William Ceballos',
+    semanas: {1:{reporto:false,fotos:'No',nov:'Nuevo Coordinador Abril 16 - Sin reporte'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Atlántico', tienda:'TRINITARIAS', coord:'Yair Reyes',
+    semanas: {1:{reporto:true,fecha:'5/05/2026',bodega:'Disponible 20%',cierre100:false,fotos:'Si',nov:'Cierre parcial'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Atlántico', tienda:'NORTE', coord:'Milton Mercado',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Sin info',cierre100:false,fotos:'No',nov:'Evacuación de bodega'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Bogotá', tienda:'AMERICAS', coord:'Alvaro Gutierrez',
+    semanas: {1:{reporto:true,fecha:'7/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Bogotá', tienda:'BOGOTA NORTE', coord:'Miguel Buitrago',
+    semanas: {1:{reporto:true,fecha:'7/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Centro', tienda:'FABRICATO', coord:'Oscar Rodriguez',
+    semanas: {1:{reporto:'vacaciones',nov:'Vacaciones del 2 al 21 de Mayo'}, 2:{reporto:'vacaciones',nov:'Vacaciones 2-21 Mayo'}, 3:{reporto:'vacaciones',nov:'Vacaciones 2-21 Mayo'}, 4:{reporto:'pendiente'}}},
+  {zona:'Centro', tienda:'FLORIDA', coord:'Mijail Alvarez',
+    semanas: {1:{reporto:true,fecha:'7/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Caribe', tienda:'RIOHACHA', coord:'Orlando Fuentes',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Disponible',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Caribe', tienda:'PLAZUELA', coord:'Efrain Barrios',
+    semanas: {1:{reporto:true,fecha:'5/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Bogotá', tienda:'EDEN', coord:'Camilo Leon',
+    semanas: {1:{reporto:true,fecha:'7/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Atlántico', tienda:'SANTA MARTA', coord:'Jesus Ortiz',
+    semanas: {1:{reporto:true,fecha:'5/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si',nov:'Vacaciones Mayo 15 al 2 Junio'}, 2:{reporto:'pendiente'}, 3:{reporto:'vacaciones',nov:'Vacaciones Mayo 15-Jun 2'}, 4:{reporto:'vacaciones',nov:'Vacaciones Mayo 15-Jun 2'}}},
+  {zona:'Atlántico', tienda:'HIPER', coord:'Carlos Avendaño',
+    semanas: {1:{reporto:false,bodega:'Disponible',fotos:'Si',nov:'Sin reporte semana 1'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Centro', tienda:'MOLINOS', coord:'Andres Rojas',
+    semanas: {1:{reporto:false,bodega:'Disponible 70%',fotos:'Si',nov:'Sin reporte S1 - Cierre parcial'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Centro', tienda:'CACIQUE', coord:'Albert Saucedo',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Atlántico', tienda:'PRINCIPAL', coord:'Mariano Lozano',
+    semanas: {1:{reporto:false,bodega:'Evacuación',fotos:'Si',nov:'Sin reporte S1 - Bodega evacuación'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Caribe', tienda:'SAN FELIPE', coord:'Elsy Barrios',
+    semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Bogotá', tienda:'CRA 30', coord:'Diego Valero',
+    semanas: {1:{reporto:false,fotos:'No',nov:'Sin reporte y sin fotos'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+];
+
+const pistoleo = [
+  {ag:'01', nombre:'PRINCIPAL', zona:'Atlántico', vals:[null,null,193,190,190,196,194,199,201,188,165,24,195,214,203,200,207,195,191]},
+  {ag:'10', nombre:'CUATRO VIENTOS', zona:'Atlántico', vals:[null,68,75,72,75,75,79,80,81,81,81,82,82,82,83,84,84,81,78]},
+  {ag:'18', nombre:'BUCARAMANGA', zona:'Centro', vals:[null,52,51,49,46,46,48,48,null,50,50,47,42,44,46,48,48,48,48]},
+  {ag:'20', nombre:'JAMAR METROPOLITANO', zona:'Atlántico', vals:[null,121,121,115,117,120,120,121,120,81,120,121,120,118,120,121,117,121,117]},
+  {ag:'39', nombre:'JAMAR RIOHACHA', zona:'Caribe', vals:[null,null,75,73,73,77,79,81,null,81,81,77,77,null,72,71,73,73,68]},
+  {ag:'F6', nombre:'VALLEDUPAR LOPERENA', zona:'Caribe', vals:[null,46,42,41,43,42,43,46,46,44,45,45,45,43,46,46,45,45,45]},
+  {ag:'55', nombre:'MONTERIA', zona:'Caribe', vals:[null,132,128,129,130,131,134,133,132,134,134,132,128,null,133,135,119,120,122]},
+  {ag:'65', nombre:'JAMAR SINCELEJO', zona:'Caribe', vals:[null,126,132,130,134,128,132,131,135,130,104,137,134,130,133,129,109,122,129]},
+  {ag:'67', nombre:'JAMAR SAN FELIPE', zona:'Atlántico', vals:[null,110,101,113,null,115,113,107,104,108,114,116,115,116,109,117,115,116,106]},
+  {ag:'84', nombre:'JAMAR LA PLAZUELA', zona:'Caribe', vals:[48,47,48,48,48,48,50,50,50,52,51,48,49,50,51,51,51,51,51]},
+  {ag:'85', nombre:'SANTA MARTA', zona:'Atlántico', vals:[null,115,116,115,109,109,113,118,115,118,117,110,115,117,119,116,120,119,120]},
+  {ag:'95', nombre:'JAMAR NORTE', zona:'Atlántico', vals:[null,179,179,179,179,179,198,176,176,176,176,null,176,176,176,176,176,176,176]},
+  {ag:'A3', nombre:'MAYORCA CC MEDELLIN', zona:'Centro', vals:[null,152,139,145,143,143,144,143,143,143,159,156,159,null,141,141,141,null,146]},
+  {ag:'A8', nombre:'MOLINOS CC MEDELLIN', zona:'Centro', vals:[null,168,168,166,165,164,170,168,162,167,173,170,176,null,166,161,163,165,170]},
+  {ag:'B4', nombre:'JAMAR CC FLORIDA', zona:'Centro', vals:[null,72,72,72,72,72,72,72,72,72,72,72,72,72,72,63,72,72,72]},
+  {ag:'B9', nombre:'JAMAR PLAZA AMERICAS', zona:'Bogotá', vals:[null,104,116,109,100,106,97,95,93,102,98,97,102,95,80,91,87,80,88]},
+  {ag:'F7', nombre:'JAMAR NORTE BOGOTA', zona:'Bogotá', vals:[null,191,185,186,181,187,182,185,186,186,182,182,180,156,179,177,176,172,171]},
+  {ag:'F8', nombre:'JAMAR FABRICATO', zona:'Centro', vals:[null,66,77,76,72,78,79,81,79,82,80,74,81,81,77,78,78,78,84]},
+  {ag:'H1', nombre:'JAMAR EL EDEN', zona:'Bogotá', vals:[null,187,181,183,182,184,182,186,186,185,186,190,188,188,190,185,185,182,185]},
+  {ag:'H4', nombre:'JAMAR CRA 30', zona:'Bogotá', vals:[null,267,262,258,263,257,252,260,249,248,239,243,249,249,253,244,249,249,226]},
+  {ag:'XX', nombre:'HIPERJAMAR', zona:'Atlántico', vals:[null,null,96,96,98,97,99,101,100,116,181,86,91,88,90,91,92,94,90]},
+];
+
+// ================================================================
+// SISTEMA DE VERSIÓN Y PERSISTENCIA
+// ================================================================
+const DATA_VERSION = 'd5fee1b896d1';
+
+function autoGuardar() {
+  try {
+    localStorage.setItem('jv', DATA_VERSION);
+    localStorage.setItem('jc', JSON.stringify(calidad));
+    localStorage.setItem('ji', JSON.stringify(inventario));
+    localStorage.setItem('jp', JSON.stringify(pistoleo));
+  } catch(e) {}
+}
+
+function cargarGuardados() {
+  try {
+    if (localStorage.getItem('jv') !== DATA_VERSION) {
+      // Versión nueva en GitHub → usar datos del archivo
+      ['jv','jc','ji','jp'].forEach(k => localStorage.removeItem(k));
+      localStorage.setItem('jv', DATA_VERSION);
+      return;
+    }
+    const jc = localStorage.getItem('jc');
+    const ji = localStorage.getItem('ji');
+    const jp = localStorage.getItem('jp');
+    if (jc) { const p=JSON.parse(jc); calidad.length=0; p.forEach(t=>calidad.push(t)); }
+    if (ji) { const p=JSON.parse(ji); inventario.length=0; p.forEach(t=>inventario.push(t)); }
+    if (jp) { const p=JSON.parse(jp); pistoleo.length=0; p.forEach(t=>pistoleo.push(t)); }
+  } catch(e) {}
+}
+
+function resetearDatos() {
+  if (!confirm('¿Borrar cambios locales y volver a los datos del archivo HTML?')) return;
+  ['jv','jc','ji','jp'].forEach(k => localStorage.removeItem(k));
+  toast('Datos reseteados. Recargando...');
+  setTimeout(()=>location.reload(),800);
+}
+
+// ================================================================
+// ESTADO
+// ================================================================
+let tabActual = 'inv';
+let semActual = '1';
+let semPistActual = 'todas';
+let zonaActual = 'todas';
+
+// Instancias de gráficas
+let chartDonaInv, chartDistInv, chartDonaCalh, chartDistCal, chartTopPist, chartEvolPist;
+
+// ================================================================
+// HELPERS
+// ================================================================
+const C = {
+  verde:'#2EB872', 'verde-d':'#1F8A55', 'verde-l':'#E3F5EC',
+  am:'#F4B73E', 'am-d':'#C68F1F', 'am-l':'#FDF3DE',
+  naranja:'#FF8C00', 'naranja-d':'#CC7000', 'naranja-l':'#FFE8CC',
+  rojo:'#E63946', 'rojo-d':'#B12530', 'rojo-l':'#FCE4E6',
+  rd:'#B12530', g1:'#F3F4F6', g5:'#6B7280', g9:'#1F2937'
+};
+
+function pctBarra(est) {
+  if (est==='verde') return 100;
+  if (est==='amarillo'||est==='naranja') return 60;
+  if (est==='rojo'||est==='rojo-dark') return 30;
+  if (est==='pendiente') return 100;
+  return 0;
+}
+
+function colorEst(est) {
+  if (est==='verde') return C.verde;
+  if (est==='amarillo') return C.am;
+  if (est==='naranja') return C.naranja;
+  if (est==='rojo') return C.rojo;
+  if (est==='rojo-dark') return C.rd;
+  return C.g1;
+}
+
+function labelEst(est) {
+  const m = {verde:'Con reporte',amarillo:'Novedad',naranja:'Cierre parcial',
+    rojo:'Sin técnico/Sin reporte','rojo-dark':'No envió',pendiente:'Pendiente'};
+  return m[est]||est;
+}
+
+function filtrarZona(arr) {
+  return zonaActual==='todas' ? arr : arr.filter(t=>t.zona===zonaActual);
+}
+
+// ================================================================
+// ESTADO INVENTARIO
+// ================================================================
+function estadoInv(semData) {
+  if (!semData) return 'pendiente';
+  const r = semData.reporto;
+  if (r==='pendiente'||r===undefined||r===null) return 'pendiente';
+  if (r==='vacaciones') return 'amarillo';
+  if (r===false) return 'rojo';
+  if (r===true) return semData.cierre100===true ? 'verde' : 'naranja';
+  return 'pendiente';
+}
+
+function estadoInvConsol(tienda) {
+  const sem = semActual;
+  if (sem!=='todas') return estadoInv(tienda.semanas[parseInt(sem)]);
+  const all = [1,2,3,4].map(s=>estadoInv(tienda.semanas[s]));
+  const cd = all.filter(e=>e!=='pendiente');
+  if (!cd.length) return 'pendiente';
+  if (cd.includes('rojo')) return 'rojo';
+  if (cd.includes('naranja')) return 'naranja';
+  if (cd.every(e=>e==='amarillo')) return 'amarillo';
+  return 'verde';
+}
+
+// ================================================================
+// ESTADO CALIDAD
+// ================================================================
+function estadoCalConsol(tienda) {
+  const sem = semActual;
+  if (sem!=='todas') return tienda.semanas[parseInt(sem)]?.estado || 'pendiente';
+  const all = [1,2,3,4].map(s=>tienda.semanas[s]?.estado);
+  const cd = all.filter(e=>e&&e!=='pendiente');
+  if (!cd.length) return 'pendiente';
+  if (cd.every(e=>e==='rojo')) return 'rojo';
+  if (cd.includes('rojo-dark')) return 'rojo-dark';
+  if (cd.includes('amarillo')) return 'amarillo';
+  return 'verde';
+}
+
+// ================================================================
+// RENDER INVENTARIO
+// ================================================================
+function renderInv() {
+  const todas = filtrarZona(inventario);
+  const cons = todas.map(t=>{const e=estadoInvConsol(t); return {...t,e};});
+  const total = cons.length;
+  const vac = cons.filter(t=>t.e==='amarillo').length;
+  const pend = cons.filter(t=>t.e==='pendiente').length;
+  const rep = cons.filter(t=>t.e==='verde'||t.e==='naranja').length;
+  const sinRep = cons.filter(t=>t.e==='rojo').length;
+  const eleg = total - vac - pend;
+  const pct = eleg>0 ? Math.round(rep/eleg*1000)/10 : 0;
+
+  // Info filtro
+  document.getElementById('finfo-inv').textContent = semActual==='todas' ? 'Todas las semanas' : 'Semana '+semActual;
+
+  // KPIs
+  document.getElementById('kpi-inv').innerHTML =
+    kpiHTML('kr','ti-building-store','Total Tiendas',total,'')+
+    kpiHTML('kg','ti-circle-check','Reportaron',rep,'de '+eleg+' elegibles')+
+    kpiHTML('kr','ti-circle-x','Sin Reporte',sinRep,eleg>0?(sinRep/eleg*100).toFixed(1)+'%':'-')+
+    kpiHTML('ky','ti-beach','Vacaciones',vac,total>0?(vac/total*100).toFixed(1)+'%':'-')+
+    kpiHTML('kgr','ti-clock-pause','Pendiente',pend,total>0?(pend/total*100).toFixed(1)+'%':'-');
+
+  // Barras
+  const barrasEl = document.getElementById('barras-inv');
+  barrasEl.innerHTML = cons.map(t=>{
+    const semD = semActual==='todas' ? null : t.semanas[parseInt(semActual)];
+    const tipTxt = JSON.stringify({
+      tienda:t.tienda, lbl:'Coordinador', pers:t.coord, zona:t.zona,
+      est:labelEst(t.e), color:colorEst(t.e),
+      fecha:semD?.fecha||'—', bodega:semD?.bodega||'—', nov:semD?.nov||''
+    }).replace(/"/g,'&quot;');
+    return `<tr data-tip="${tipTxt}"><td>${t.tienda}</td><td><div class="bbg"><div class="bfill ${t.e}" style="width:${pctBarra(t.e)}%"></div></div></td></tr>`;
+  }).join('');
+  adjuntarTips(barrasEl);
+
+  // Dona (Reportaron vs Sin reporte, sin vacaciones ni pendientes)
+  const dc = [rep, sinRep];
+  const dl = ['Reportaron','Sin reporte'];
+  const dcc = [C.verde, C.rojo];
+  if (chartDonaInv) chartDonaInv.destroy();
+  chartDonaInv = new Chart(document.getElementById('dona-inv'),{
+    type:'doughnut',
+    data:{labels:dl,datasets:[{data:dc,backgroundColor:dcc,borderWidth:3,borderColor:'#fff'}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'65%',
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.parsed} (${eleg>0?(ctx.parsed/eleg*100).toFixed(1):0}%)`}}}}
+  });
+  document.getElementById('dstats-inv').innerHTML =
+    dstatHTML(C.verde,'Reportaron (cierre 100% + parcial)',rep,eleg>0?(rep/eleg*100).toFixed(1):0)+
+    dstatHTML(C.rojo,'Sin reporte',sinRep,eleg>0?(sinRep/eleg*100).toFixed(1):0)+
+    `<div class="dstat" style="border-top:1px dashed var(--g1);padding-top:7px;margin-top:3px">
+      <span class="dsdot" style="background:var(--am)"></span>
+      <span class="dslbl" style="font-style:italic">Vacaciones (excluidas)</span>
+      <span class="dsval">${vac}</span><span class="dspct">—</span></div>`;
+
+  // Distribución
+  if (chartDistInv) chartDistInv.destroy();
+  chartDistInv = new Chart(document.getElementById('dist-inv'),{
+    type:'bar',
+    data:{labels:['Reportaron','Sin reporte','Vacaciones','Pendiente'],
+      datasets:[{data:[rep,sinRep,vac,pend],backgroundColor:[C.verde,C.rojo,C.am,C.g1],borderRadius:5,barThickness:48}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grid:{color:'#f0f0f0',drawBorder:false},ticks:{font:{size:10},stepSize:1}},
+               x:{grid:{display:false},ticks:{font:{size:10,weight:'600'}}}}}
+  });
+
+  // Gauge
+  dibujarGauge('gauge-inv', pct, C.rojo);
+  document.getElementById('gval-inv').textContent = pct.toFixed(1).replace('.',',')+' %';
+  document.getElementById('glbl-inv').textContent = rep+' reportaron / '+eleg+' elegibles';
+
+  // Novedades
+  const novs = [];
+  cons.forEach(t=>{
+    if (semActual==='todas') {
+      [1,2,3,4].forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:estadoInv(t.semanas[s])}) });
+    } else {
+      const sd = t.semanas[parseInt(semActual)];
+      if (sd?.nov) novs.push({t,sem:semActual,nov:sd.nov,est:estadoInv(sd)});
+    }
+  });
+  document.getElementById('nov-inv').innerHTML = novs.length
+    ? novs.map(n=>`<div class="nov"><div class="novdot ${n.est}"></div><div><div class="novtienda">${n.t.tienda} <small>${n.t.coord} · S${n.sem}</small></div><div class="novtxt">${n.nov}</div></div></div>`).join('')
+    : '<div class="empty"><i class="ti ti-mood-smile"></i> Sin novedades</div>';
+}
+
+// ================================================================
+// RENDER CALIDAD
+// ================================================================
+function renderCal() {
+  const todas = filtrarZona(calidad);
+  const cons = todas.map(t=>{const e=estadoCalConsol(t); return {...t,e};});
+  const total = cons.length;
+  const sinTec = cons.filter(t=>t.e==='rojo').length;
+  const conRep = cons.filter(t=>t.e==='verde').length;
+  const noEnvio = cons.filter(t=>t.e==='rojo-dark').length;
+  const nov = cons.filter(t=>t.e==='amarillo').length;
+  const pend = cons.filter(t=>t.e==='pendiente').length;
+  const eleg = total - sinTec - pend;
+  const pct = eleg>0 ? Math.round(conRep/eleg*1000)/10 : 0;
+
+  document.getElementById('finfo-cal').textContent = semActual==='todas'?'Todas las semanas':'Semana '+semActual;
+
+  document.getElementById('kpi-cal').innerHTML =
+    kpiHTML('kr','ti-building-store','Total Tiendas',total,'')+
+    kpiHTML('kg','ti-clipboard-check','Con Reporte',conRep,'de '+eleg+' elegibles')+
+    kpiHTML('kr','ti-user-x','Sin Técnico',sinTec,total>0?(sinTec/total*100).toFixed(1)+'%':'-')+
+    kpiHTML('ky','ti-alert-triangle','Novedades',nov,eleg>0?(nov/eleg*100).toFixed(1)+'%':'-')+
+    kpiHTML('kgr','ti-clock-pause','Pendiente',pend,total>0?(pend/total*100).toFixed(1)+'%':'-');
+
+  const barrasEl = document.getElementById('barras-cal');
+  barrasEl.innerHTML = cons.map(t=>{
+    const semD = semActual==='todas' ? null : t.semanas[parseInt(semActual)];
+    const tipTxt = JSON.stringify({
+      tienda:t.tienda, lbl:'Técnico', pers:t.tecnico, zona:t.zona,
+      est:labelEst(t.e), color:colorEst(t.e),
+      fecha:semD?.fecha||'—', nov:semD?.nov||''
+    }).replace(/"/g,'&quot;');
+    return `<tr data-tip="${tipTxt}"><td>${t.tienda}</td><td><div class="bbg"><div class="bfill ${t.e}" style="width:${pctBarra(t.e)}%"></div></div></td></tr>`;
+  }).join('');
+  adjuntarTips(barrasEl);
+
+  const dc2 = [conRep, noEnvio, nov];
+  const dl2 = ['Con reporte','No envió','Novedad'];
+  const dcc2 = [C.verde, C.rd, C.am];
+  if (chartDonaCalh) chartDonaCalh.destroy();
+  chartDonaCalh = new Chart(document.getElementById('dona-cal'),{
+    type:'doughnut',
+    data:{labels:dl2,datasets:[{data:dc2,backgroundColor:dcc2,borderWidth:3,borderColor:'#fff'}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'65%',
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.parsed} (${eleg>0?(ctx.parsed/eleg*100).toFixed(1):0}%)`}}}}
+  });
+  document.getElementById('dstats-cal').innerHTML =
+    dstatHTML(C.verde,'Con reporte',conRep,eleg>0?(conRep/eleg*100).toFixed(1):0)+
+    dstatHTML(C.rd,'No envió',noEnvio,eleg>0?(noEnvio/eleg*100).toFixed(1):0)+
+    dstatHTML(C.am,'Novedad',nov,eleg>0?(nov/eleg*100).toFixed(1):0)+
+    `<div class="dstat" style="border-top:1px dashed var(--g1);padding-top:7px;margin-top:3px">
+      <span class="dsdot" style="background:var(--azul-r)"></span>
+      <span class="dslbl" style="font-style:italic">Sin técnico (excluidos)</span>
+      <span class="dsval">${sinTec}</span><span class="dspct">—</span></div>`;
+
+  if (chartDistCal) chartDistCal.destroy();
+  chartDistCal = new Chart(document.getElementById('dist-cal'),{
+    type:'bar',
+    data:{labels:['Con reporte','Sin técnico','No envió','Novedad','Pendiente'],
+      datasets:[{data:[conRep,sinTec,noEnvio,nov,pend],
+        backgroundColor:[C.verde,C.rojo,C.rd,C.am,C.g1],borderRadius:5,barThickness:44}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grid:{color:'#f0f0f0',drawBorder:false},ticks:{font:{size:10},stepSize:1}},
+               x:{grid:{display:false},ticks:{font:{size:9,weight:'600'}}}}}
+  });
+
+  dibujarGauge('gauge-cal', pct, C.rojo);
+  document.getElementById('gval-cal').textContent = pct.toFixed(1).replace('.',',')+' %';
+  document.getElementById('glbl-cal').textContent = conRep+' con reporte / '+eleg+' elegibles';
+
+  const novs = [];
+  cons.forEach(t=>{
+    if (semActual==='todas') {
+      [1,2,3,4].forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:t.semanas[s].estado}) });
+    } else {
+      const sd = t.semanas[parseInt(semActual)];
+      if (sd?.nov) novs.push({t,sem:semActual,nov:sd.nov,est:sd.estado});
+    }
+  });
+  document.getElementById('nov-cal').innerHTML = novs.length
+    ? novs.map(n=>`<div class="nov"><div class="novdot ${n.est||'pendiente'}"></div><div><div class="novtienda">${n.t.tienda} <small>${n.t.tecnico} · S${n.sem}</small></div><div class="novtxt">${n.nov}</div></div></div>`).join('')
+    : '<div class="empty"><i class="ti ti-mood-smile"></i> Sin novedades</div>';
+}
+
+// ================================================================
+// RENDER PISTOLEO
+// ================================================================
+function renderPist() {
+  const todas = filtrarZona(pistoleo);
+  const numSem = pistoleo[0].vals.length;
+  let sems = [];
+  if (semPistActual==='todas') { for(let i=1;i<=numSem;i++) sems.push(i); }
+  else { const s=parseInt(semPistActual); if(s>=1&&s<=numSem) sems=[s]; }
+
+  const totales = todas.map(t=>{
+    const tot = sems.reduce((a,s)=>a+(t.vals[s-1]||0),0);
+    return {...t,tot};
+  });
+  const ordenados = [...totales].sort((a,b)=>b.tot-a.tot);
+  const maxTot = ordenados[0]?.tot || 1;
+  const totalConteos = totales.reduce((a,t)=>a+t.tot,0);
+  const conRep = totales.filter(t=>t.tot>0).length;
+  const cob = todas.length>0 ? conRep/todas.length*100 : 0;
+
+  document.getElementById('finfo-pist').textContent = semPistActual==='todas' ? 'Histórico · '+numSem+' semanas' : 'Semana S'+semPistActual;
+  document.getElementById('finfo-heat').textContent = semPistActual==='todas' ? 'Todas' : 'S'+semPistActual;
+
+  const maxTienda = ordenados[0];
+  const minTienda = ordenados[ordenados.length-1];
+  document.getElementById('kpi-pist').innerHTML =
+    kpiHTML('kr','ti-building-store','Tiendas',todas.length,'')+
+    kpiHTML('kr','ti-activity','Total Conteos',totalConteos.toLocaleString('es-CO'),'')+
+    kpiHTML('kg','ti-trending-up','Max Tienda',maxTienda?.nombre.replace('JAMAR ','').substring(0,12)||'—',maxTienda?.tot.toLocaleString('es-CO')||'')+
+    kpiHTML('kr','ti-trending-down','Min Tienda',minTienda?.nombre.replace('JAMAR ','').substring(0,12)||'—',minTienda?.tot.toLocaleString('es-CO')||'');
+
+  function umbral(tot) {
+    const p = tot/maxTot*100;
+    return p>=65?'verde':p>=25?'amarillo':'rojo';
+  }
+  function umbralC(tot) {
+    const p = tot/maxTot*100;
+    return p>=65?C.verde:p>=25?C.am:C.rojo;
+  }
+
+  // Ranking
+  let rHTML = '<table class="btbl"><thead><tr><th>AG</th><th>TIENDA</th><th>TOTAL</th></tr></thead><tbody>';
+  ordenados.forEach(r=>{
+    const u=umbral(r.tot);
+    const w=r.tot/maxTot*100;
+    const uc=umbralC(r.tot);
+    rHTML+=`<tr data-tip="${JSON.stringify({tienda:r.nombre,lbl:'Agencia',pers:r.ag,zona:r.zona,est:'Total: '+r.tot.toLocaleString('es-CO'),color:uc,fecha:'Promedio: '+Math.round(r.tot/sems.length)}).replace(/"/g,'&quot;')}">
+      <td style="width:36px;font-size:10px;color:var(--g5)">${r.ag}</td>
+      <td style="font-size:11px">${r.nombre}</td>
+      <td><div style="display:flex;align-items:center;gap:7px"><div class="bbg" style="min-width:100px;flex:1"><div class="bfill ${u}" style="width:${w}%"></div></div><span style="font-weight:700;font-size:11px;min-width:44px;text-align:right;color:${uc}">${r.tot.toLocaleString('es-CO')}</span></div></td>
+    </tr>`;
+  });
+  rHTML+='</tbody></table>';
+  document.getElementById('rank-pist').innerHTML = rHTML;
+  adjuntarTips(document.getElementById('rank-pist'));
+
+  // Top 10
+  const top10 = ordenados.slice(0,10);
+  if (chartTopPist) chartTopPist.destroy();
+  chartTopPist = new Chart(document.getElementById('top-pist'),{
+    type:'bar',
+    data:{labels:top10.map(t=>t.nombre.replace('JAMAR ','').substring(0,11)),
+      datasets:[{data:top10.map(t=>t.tot),backgroundColor:top10.map(t=>umbralC(t.tot)),borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grid:{color:'#f0f0f0',drawBorder:false},ticks:{font:{size:10}}},
+               x:{grid:{display:false},ticks:{font:{size:9,weight:'600'},maxRotation:45,autoSkip:false}}}}
+  });
+
+  // Evolución semanal
+  const evol = sems.map(s=>todas.reduce((a,t)=>a+(t.vals[s-1]||0),0));
+  if (chartEvolPist) chartEvolPist.destroy();
+  chartEvolPist = new Chart(document.getElementById('evol-pist'),{
+    type:'line',
+    data:{labels:sems.map(s=>'S'+s),
+      datasets:[{label:'Total',data:evol,borderColor:C.rojo,backgroundColor:'rgba(200,16,46,.1)',
+        borderWidth:2,fill:true,tension:.3,pointBackgroundColor:C.rojo,pointRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grid:{color:'#f0f0f0',drawBorder:false},ticks:{font:{size:10}}},
+               x:{grid:{display:false},ticks:{font:{size:10,weight:'600'}}}}}
+  });
+
+  // Gauge cobertura
+  dibujarGauge('gauge-pist', cob, C.verde);
+  document.getElementById('gval-pist').textContent = cob.toFixed(1).replace('.',',')+' %';
+
+  // Heat map
+  const heat = document.getElementById('heat-pist');
+  let hHTML = '<thead><tr><th>AG</th><th style="text-align:left;padding-left:8px">TIENDA</th>';
+  sems.forEach(s=>hHTML+=`<th>S${s}</th>`);
+  hHTML += '<th>TOTAL</th><th>PROM</th></tr></thead><tbody>';
+  todas.forEach(r=>{
+    const vf = sems.map(s=>r.vals[s-1]);
+    const val = vf.filter(v=>v!=null);
+    const tot2 = val.reduce((a,b)=>a+b,0);
+    const prom = val.length ? Math.round(tot2/val.length) : 0;
+    hHTML+=`<tr><td class="ag">${r.ag}</td><td class="tn">${r.nombre}</td>`;
+    vf.forEach(v=>{
+      if(v==null) hHTML+='<td class="he">—</td>';
+      else hHTML+=`<td class="${v>=150?'hv':v>=80?'hy':'hr'}">${v}</td>`;
+    });
+    hHTML+=`<td class="hp">${tot2}</td><td class="hp">${prom}</td></tr>`;
+  });
+  hHTML+='</tbody>';
+  heat.innerHTML = hHTML;
+}
+
+// ================================================================
+// HELPERS RENDER
+// ================================================================
+function kpiHTML(cls,ico,lbl,val,sub) {
+  return `<div class="kpi"><div class="kicon ${cls}"><i class="ti ${ico}"></i></div><div><div class="klbl">${lbl}</div><div class="kval">${val}</div>${sub?`<div class="ksub">${sub}</div>`:''}</div></div>`;
+}
+
+function dstatHTML(color,lbl,val,pct) {
+  return `<div class="dstat"><span class="dsdot" style="background:${color}"></span><span class="dslbl">${lbl}</span><span class="dsval">${val}</span><span class="dspct">(${pct}%)</span></div>`;
+}
+
+// ================================================================
+// GAUGE (canvas)
+// ================================================================
+function dibujarGauge(id, pct, color) {
+  const c = document.getElementById(id);
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const cx=c.width/2, cy=c.height*0.88, r=Math.min(c.width,c.height*1.6)/2-18;
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.beginPath(); ctx.arc(cx,cy,r,Math.PI,0,false);
+  ctx.lineWidth=20; ctx.strokeStyle='#F3F4F6'; ctx.lineCap='round'; ctx.stroke();
+  const ang = Math.PI + (pct/100)*Math.PI;
+  ctx.beginPath(); ctx.arc(cx,cy,r,Math.PI,ang,false);
+  ctx.lineWidth=20; ctx.strokeStyle=color; ctx.lineCap='round'; ctx.stroke();
+}
+
+// ================================================================
+// TOOLTIP
+// ================================================================
+function adjuntarTips(container) {
+  const tip = document.getElementById('tip');
+  container.querySelectorAll('tr[data-tip]').forEach(row=>{
+    row.addEventListener('mouseenter',e=>{
+      try {
+        const d = JSON.parse(row.dataset.tip.replace(/&quot;/g,'"'));
+        tip.innerHTML = `<strong>${d.tienda||d.nombre||''}</strong>
+          <span class="tl">Zona</span><span class="tv"> ${d.zona}</span><br>
+          <span class="tl">${d.lbl}</span><span class="tv"> ${d.pers}</span><br>
+          <span class="tl">Estado</span><span class="tv"> <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${d.color};margin-right:4px"></span>${d.est}</span>
+          ${d.fecha&&d.fecha!=='—'?`<br><span class="tl">Fecha</span><span class="tv"> ${d.fecha}</span>`:''}
+          ${d.bodega&&d.bodega!=='—'?`<br><span class="tl">Bodega</span><span class="tv"> ${d.bodega}</span>`:''}
+          ${d.nov?`<br><span class="tl">Novedad</span><span class="tv"> ${d.nov}</span>`:''}`;
+        tip.classList.add('show');
+      } catch(err) {}
+    });
+    row.addEventListener('mousemove',e=>{
+      let x=e.clientX+12, y=e.clientY-tip.offsetHeight-10;
+      if(x+tip.offsetWidth>window.innerWidth) x=e.clientX-tip.offsetWidth-12;
+      if(y<8) y=e.clientY+14;
+      tip.style.left=x+'px'; tip.style.top=y+'px';
+    });
+    row.addEventListener('mouseleave',()=>tip.classList.remove('show'));
+  });
+}
+
+// ================================================================
+// RENDER PRINCIPAL
+// ================================================================
+function render() {
+  if (tabActual==='inv') renderInv();
+  else if (tabActual==='cal') renderCal();
+  else if (tabActual==='pist') renderPist();
+}
+
+// ================================================================
+// TABS Y FILTROS
+// ================================================================
+function cambiarTab(tab, btn) {
+  tabActual = tab;
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('sec-'+tab).classList.add('active');
+  btn.classList.add('active');
+  const titulos={inv:'INVENTARIO CÍCLICO',cal:'BITÁCORAS DE CALIDAD',pist:'SEGUIMIENTO DE PISTOLEO'};
+  document.getElementById('tab-titulo').textContent = titulos[tab];
+  document.getElementById('ctrl-semana').style.display = tab==='pist'?'none':'';
+  document.getElementById('ctrl-pist').style.display = tab==='pist'?'':'none';
+  render();
+}
+
+function aplicar() {
+  semActual = document.getElementById('f-sem').value;
+  semPistActual = document.getElementById('f-spist').value;
+  zonaActual = document.getElementById('f-zona').value;
+  render();
+}
+
+// ================================================================
+// EDITOR
+// ================================================================
+function abrirEditor() {
+  document.getElementById('modal').classList.add('open');
+  // Cargar la pestaña activa del editor
+  const activa = document.querySelector('.msec.active')?.id;
+  if (activa==='m-inv') cargarEditorInv();
+  else if (activa==='m-cal') cargarEditorCal();
+  else if (activa==='m-pist') cargarEditorPist();
+}
+
+function cerrarEditor() {
+  document.getElementById('modal').classList.remove('open');
+}
+
+function cambiarMTab(id, btn) {
+  document.querySelectorAll('.msec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  if (id==='m-inv') cargarEditorInv();
+  else if (id==='m-cal') cargarEditorCal();
+  else if (id==='m-pist') cargarEditorPist();
+}
+
+// ---- EDITOR INVENTARIO ----
+function cargarEditorInv() {
+  const sem = parseInt(document.getElementById('e-inv-sem').value);
+  const tbody = document.getElementById('e-inv-body');
+  tbody.innerHTML = inventario.map((t,i)=>{
+    const s = t.semanas[sem] || {};
+    const rOpt = (v,lbl)=>`<option value="${v}" ${(()=>{
+      if(v==='si') return s.reporto===true?'selected':'';
+      if(v==='no') return s.reporto===false?'selected':'';
+      if(v==='vacaciones') return s.reporto==='vacaciones'?'selected':'';
+      if(v==='pendiente') return (!s.reporto&&s.reporto!==false&&s.reporto!==true)||s.reporto==='pendiente'?'selected':'';
+      return '';
+    })()}">${lbl}</option>`;
+    return `<tr>
+      <td style="font-weight:600">${t.tienda}</td>
+      <td><input id="ei-coord-${i}" value="${t.coord||''}" style="min-width:140px"></td>
+      <td><select id="ei-rep-${i}">${rOpt('si','Sí reportó')}${rOpt('no','No reportó')}${rOpt('vacaciones','Vacaciones')}${rOpt('pendiente','Pendiente')}</select></td>
+      <td><input id="ei-fec-${i}" value="${s.fecha||''}" placeholder="DD/MM/YYYY" style="width:100px"></td>
+      <td><input id="ei-bod-${i}" value="${s.bodega||''}" placeholder="Bodega..." style="min-width:120px"></td>
+      <td><select id="ei-c100-${i}">
+        <option value="" ${s.cierre100===undefined?'selected':''}>—</option>
+        <option value="true" ${s.cierre100===true?'selected':''}>Sí (100%)</option>
+        <option value="false" ${s.cierre100===false?'selected':''}>No (parcial)</option>
+      </select></td>
+      <td><input id="ei-nov-${i}" value="${s.nov||''}" style="min-width:150px"></td>
+    </tr>`;
+  }).join('');
+}
+
+function guardarEditorInv() {
+  const sem = parseInt(document.getElementById('e-inv-sem').value);
+  inventario.forEach((t,i)=>{
+    t.coord = document.getElementById('ei-coord-'+i)?.value || t.coord;
+    const rep = document.getElementById('ei-rep-'+i)?.value;
+    const fec = document.getElementById('ei-fec-'+i)?.value;
+    const bod = document.getElementById('ei-bod-'+i)?.value;
+    const c100 = document.getElementById('ei-c100-'+i)?.value;
+    const nov = document.getElementById('ei-nov-'+i)?.value;
+    const d = {};
+    if (rep==='si') d.reporto=true;
+    else if (rep==='no') d.reporto=false;
+    else if (rep==='vacaciones') d.reporto='vacaciones';
+    else d.reporto='pendiente';
+    if (fec) d.fecha=fec;
+    if (bod) d.bodega=bod;
+    if (c100==='true') d.cierre100=true;
+    else if (c100==='false') d.cierre100=false;
+    if (nov) d.nov=nov;
+    t.semanas[sem] = d;
+  });
+}
+
+// ---- EDITOR CALIDAD ----
+function cargarEditorCal() {
+  const sem = parseInt(document.getElementById('e-cal-sem').value);
+  const tbody = document.getElementById('e-cal-body');
+  tbody.innerHTML = calidad.map((t,i)=>{
+    const s = t.semanas[sem] || {estado:'pendiente'};
+    const estOpts = ['verde','amarillo','rojo-dark','rojo','pendiente'];
+    const estLbls = ['Con reporte','Novedad','No envió','Sin técnico','Pendiente'];
+    const opts = estOpts.map((v,j)=>`<option value="${v}" ${s.estado===v?'selected':''}>${estLbls[j]}</option>`).join('');
+    return `<tr>
+      <td style="font-size:11px;color:var(--g5)">${t.zona}</td>
+      <td style="font-weight:600">${t.tienda}</td>
+      <td><input id="ec-tec-${i}" value="${t.tecnico||''}" style="min-width:140px"></td>
+      <td><select id="ec-est-${i}">${opts}</select></td>
+      <td><input id="ec-fec-${i}" value="${s.fecha&&s.fecha!=='—'?s.fecha:''}" placeholder="DD/MM/YYYY" style="width:100px"></td>
+      <td><input id="ec-nov-${i}" value="${s.nov||''}" style="min-width:150px"></td>
+    </tr>`;
+  }).join('');
+}
+
+function guardarEditorCal() {
+  const sem = parseInt(document.getElementById('e-cal-sem').value);
+  calidad.forEach((t,i)=>{
+    t.tecnico = document.getElementById('ec-tec-'+i)?.value || t.tecnico;
+    const est = document.getElementById('ec-est-'+i)?.value || 'pendiente';
+    const fec = document.getElementById('ec-fec-'+i)?.value;
+    const nov = document.getElementById('ec-nov-'+i)?.value;
+    if (est==='pendiente') t.semanas[sem]={estado:'pendiente'};
+    else {
+      t.semanas[sem] = {estado:est, fecha:fec||'—'};
+      if (nov) t.semanas[sem].nov = nov;
+    }
+  });
+}
+
+// ---- EDITOR PISTOLEO ----
+function cargarEditorPist() {
+  const num = pistoleo[0].vals.length;
+  document.getElementById('e-pist-total').textContent = num;
+  const tbl = document.getElementById('e-pist-tbl');
+  let h = '<thead><tr><th style="position:sticky;left:0;background:var(--g9);z-index:2">AG</th><th style="position:sticky;left:36px;background:var(--g9);z-index:2">TIENDA</th>';
+  for(let i=1;i<=num;i++) h+=`<th>S${i}</th>`;
+  h+='</tr></thead><tbody>';
+  pistoleo.forEach((t,ri)=>{
+    h+=`<tr><td style="position:sticky;left:0;background:#fff;z-index:1;font-weight:600;font-size:10px">${t.ag}</td><td style="position:sticky;left:36px;background:#fff;z-index:1;font-weight:600;font-size:11px;white-space:nowrap">${t.nombre}</td>`;
+    for(let si=0;si<num;si++) {
+      const v = t.vals[si]==null?'':t.vals[si];
+      h+=`<td><input type="number" id="ep-${ri}-${si}" value="${v}" placeholder="—" min="0" max="999"></td>`;
+    }
+    h+='</tr>';
+  });
+  h+='</tbody>';
+  tbl.innerHTML = h;
+}
+
+function guardarEditorPist() {
+  const num = pistoleo[0].vals.length;
+  pistoleo.forEach((t,ri)=>{
+    for(let si=0;si<num;si++) {
+      const inp = document.getElementById(`ep-${ri}-${si}`);
+      if (inp) {
+        const v = inp.value.trim();
+        t.vals[si] = v==='' ? null : parseInt(v)||null;
+      }
+    }
+  });
+}
+
+function agregarSemPist() {
+  pistoleo.forEach(t=>t.vals.push(null));
+  const num = pistoleo[0].vals.length;
+  // Actualizar selector del header
+  const sel = document.getElementById('f-spist');
+  const opt = document.createElement('option');
+  opt.value = String(num); opt.textContent = 'S'+num;
+  sel.appendChild(opt);
+  document.getElementById('e-pist-total').textContent = num;
+  cargarEditorPist();
+  toast('Semana S'+num+' agregada');
+}
+
+// ---- GUARDAR TODO ----
+function guardarCambios() {
+  // Guardar los editores que estén abiertos
+  const activa = document.querySelector('.msec.active')?.id;
+  if (activa==='m-inv') guardarEditorInv();
+  else if (activa==='m-cal') guardarEditorCal();
+  else if (activa==='m-pist') guardarEditorPist();
+  // Autoguardar en localStorage
+  autoGuardar();
+  // Re-renderizar
+  render();
+  toast('Cambios guardados ✓');
+  document.getElementById('save-status').textContent = 'Guardado: '+new Date().toLocaleTimeString();
+}
+
+// ================================================================
+// IMPORTAR / EXPORTAR EXCEL
+// ================================================================
+function descargarPlantilla() {
+  exportarDatosActuales();
+}
+
+function exportarDatosActuales() {
+  const wb = XLSX.utils.book_new();
+  // Hoja Calidad
+  const cRows = [['zona','tienda','tecnico','semana','estado','fecha','novedad']];
+  calidad.forEach(t=>{[1,2,3,4].forEach(s=>{
+    const sd=t.semanas[s]||{};
+    cRows.push([t.zona,t.tienda,t.tecnico,s,sd.estado||'pendiente',sd.fecha||'',sd.nov||'']);
+  })});
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(cRows), 'Calidad');
+  // Hoja Inventario
+  const iRows = [['zona','tienda','coord','semana','reporto','fecha','bodega','cierre100','fotos','novedad']];
+  inventario.forEach(t=>{[1,2,3,4].forEach(s=>{
+    const sd=t.semanas[s]||{};
+    const r=sd.reporto===true?'si':sd.reporto===false?'no':sd.reporto==='vacaciones'?'vacaciones':'pendiente';
+    iRows.push([t.zona,t.tienda,t.coord,s,r,sd.fecha||'',sd.bodega||'',sd.cierre100===true?'true':sd.cierre100===false?'false':'',sd.fotos||'',sd.nov||'']);
+  })});
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(iRows), 'Inventario');
+  // Hoja Pistoleo
+  const num=pistoleo[0].vals.length;
+  const pRows=[['ag','nombre','zona',...Array.from({length:num},(_,i)=>'S'+(i+1))]];
+  pistoleo.forEach(t=>pRows.push([t.ag,t.nombre,t.zona,...t.vals.map(v=>v==null?'':v)]));
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(pRows), 'Pistoleo');
+  XLSX.writeFile(wb, 'dashboard_jamar_datos.xlsx');
+  toast('Excel descargado ✓');
+}
+
+function importarExcel(evt) {
+  const file = evt.target.files[0];
+  if (!file) return;
+  const res = document.getElementById('imp-result');
+  res.innerHTML = '<div style="color:var(--g5);font-size:12px">Procesando...</div>';
+  const reader = new FileReader();
+  reader.onload = e=>{
+    try {
+      const wb = XLSX.read(new Uint8Array(e.target.result),{type:'array'});
+      let ok={c:0,i:0,p:0}, errs=[];
+      // Calidad
+      if (wb.SheetNames.includes('Calidad')) {
+        const rows = XLSX.utils.sheet_to_json(wb.Sheets['Calidad']);
+        rows.forEach(r=>{
+          const idx=calidad.findIndex(t=>t.tienda===String(r.tienda||'').trim().toUpperCase());
+          if (idx<0) { errs.push('Calidad: "'+r.tienda+'" no encontrada'); return; }
+          const sem=String(r.semana||'1').trim();
+          if (r.tecnico) calidad[idx].tecnico=String(r.tecnico);
+          const est=String(r.estado||'pendiente').trim().toLowerCase();
+          if (est==='pendiente') calidad[idx].semanas[sem]={estado:'pendiente'};
+          else {
+            calidad[idx].semanas[sem]={estado:est,fecha:r.fecha?String(r.fecha):'—'};
+            if (r.novedad) calidad[idx].semanas[sem].nov=String(r.novedad);
+          }
+          ok.c++;
+        });
+      }
+      // Inventario
+      if (wb.SheetNames.includes('Inventario')) {
+        const rows = XLSX.utils.sheet_to_json(wb.Sheets['Inventario']);
+        rows.forEach(r=>{
+          const idx=inventario.findIndex(t=>t.tienda===String(r.tienda||'').trim().toUpperCase());
+          if (idx<0) { errs.push('Inventario: "'+r.tienda+'" no encontrada'); return; }
+          const sem=String(r.semana||'1').trim();
+          if (r.coord) inventario[idx].coord=String(r.coord);
+          const rStr=String(r.reporto||'pendiente').toLowerCase().trim();
+          const d={};
+          if(rStr==='si') d.reporto=true; else if(rStr==='no') d.reporto=false;
+          else if(rStr==='vacaciones') d.reporto='vacaciones'; else d.reporto='pendiente';
+          if(r.fecha) d.fecha=String(r.fecha);
+          if(r.bodega) d.bodega=String(r.bodega);
+          if(r.cierre100==='true'||r.cierre100===true) d.cierre100=true;
+          else if(r.cierre100==='false'||r.cierre100===false) d.cierre100=false;
+          if(r.fotos) d.fotos=String(r.fotos);
+          if(r.novedad) d.nov=String(r.novedad);
+          inventario[idx].semanas[sem]=d;
+          ok.i++;
+        });
+      }
+      // Pistoleo
+      if (wb.SheetNames.includes('Pistoleo')) {
+        const rows=XLSX.utils.sheet_to_json(wb.Sheets['Pistoleo']);
+        const hdrs=Object.keys(rows[0]||{});
+        const semCols=hdrs.filter(h=>/^S\d+$/i.test(h.trim())).sort((a,b)=>parseInt(a.slice(1))-parseInt(b.slice(1)));
+        rows.forEach(r=>{
+          const idx=pistoleo.findIndex(t=>t.ag===String(r.ag||r.AG||'').trim());
+          if(idx<0) return;
+          while(pistoleo[idx].vals.length<semCols.length) pistoleo[idx].vals.push(null);
+          semCols.forEach((sc,si)=>{
+            const v=r[sc];
+            pistoleo[idx].vals[si]=(v===''||v==null)?null:(parseInt(v)||null);
+          });
+          ok.p++;
+        });
+        // Actualizar selector si hay más semanas
+        const newNum=pistoleo[0].vals.length;
+        const selPist=document.getElementById('f-spist');
+        selPist.innerHTML='<option value="todas">Todas</option>';
+        for(let i=1;i<=newNum;i++) selPist.innerHTML+=`<option value="${i}">S${i}</option>`;
+      }
+      res.innerHTML=`<div class="imp-ok">✓ Importado: Calidad ${ok.c} · Inventario ${ok.i} · Pistoleo ${ok.p} tiendas<br>Haz clic en <strong>"Guardar cambios"</strong> para aplicar.</div>`;
+      if(errs.length) res.innerHTML+=`<div class="imp-err" style="margin-top:8px">Avisos: ${errs.slice(0,5).join(', ')}</div>`;
+    } catch(err) {
+      res.innerHTML=`<div class="imp-err">Error: ${err.message}</div>`;
+    }
+  };
+  reader.readAsArrayBuffer(file);
+  evt.target.value='';
+}
+
+// ================================================================
+// DESCARGAR HTML ACTUALIZADO
+// ================================================================
+function descargarHTML() {
+  // Guardar primero
+  const activa = document.querySelector('.msec.active')?.id;
+  if (activa==='m-inv') guardarEditorInv();
+  else if (activa==='m-cal') guardarEditorCal();
+  else if (activa==='m-pist') guardarEditorPist();
+  autoGuardar();
+  const doc = document.documentElement.outerHTML;
+  const blob = new Blob(['<!DOCTYPE html>\n'+doc],{type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url;
+  a.download='index.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Archivo descargado ✓');
+}
+
+// ================================================================
+// TOAST
+// ================================================================
+function toast(msg, isErr) {
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.classList.toggle('err',!!isErr);
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2600);
+}
+
+// ================================================================
+// INIT
+// ================================================================
+window.addEventListener('load', ()=>{
+  // Cargar datos guardados o del archivo según versión
+  cargarGuardados();
+  // Sincronizar selector pistoleo con semanas actuales
+  const numSem=pistoleo[0].vals.length;
+  const selPist=document.getElementById('f-spist');
+  selPist.innerHTML='<option value="todas">Todas</option>';
+  for(let i=1;i<=numSem;i++) selPist.innerHTML+=`<option value="${i}">S${i}</option>`;
+  // Mostrar controles del tab inicial (inventario)
+  document.getElementById('ctrl-semana').style.display='';
+  document.getElementById('ctrl-pist').style.display='none';
+  document.getElementById('f-sem').value='1';
+  semActual='1';
+  // Renderizar
+  renderInv();
+});
+</script>
+</body>
+</html>
