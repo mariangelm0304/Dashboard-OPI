@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-06-01T15:32:03.939Z",
+  "fecha": "2026-06-01T19:45:24.983Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -354,9 +354,8 @@
           "fecha": "22/05/2026"
         },
         "4": {
-          "estado": "amarillo",
-          "fecha": "—",
-          "nov": "Motivo"
+          "estado": "verde",
+          "fecha": "1/06/2026"
         }
       }
     },
@@ -432,9 +431,8 @@
           "fecha": "23/05/2026"
         },
         "4": {
-          "estado": "amarillo",
-          "fecha": "—",
-          "nov": "Motivo"
+          "estado": "verde",
+          "fecha": "1/06/2026"
         }
       }
     },
