@@ -1,0 +1,1748 @@
+{
+  "version": "1.0",
+  "fecha": "2026-06-01T13:43:25.052Z",
+  "calidad": [
+    {
+      "zona": "Atlántico",
+      "tienda": "PRINCIPAL",
+      "tecnico": "Carlos Gonzalez",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "14/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "HIPER",
+      "tecnico": "Yirman Ladeo",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "NORTE",
+      "tecnico": "Leandro Madrid",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "TRINITARIAS",
+      "tecnico": "Marlon Toledo",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "7/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "12/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "20/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "SANTA MARTA",
+      "tecnico": "Yesid Blanco",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "9/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "12/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "20/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "SAN FELIPE",
+      "tecnico": "Angel Vega 50%",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "7/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "14/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "20/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "4VIENTOS",
+      "tecnico": "Henry Coordinador",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "13/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "25/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "PLAZUELA",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "MONTERIA",
+      "tecnico": "Jose Campo",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "9/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "14/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "21/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "27/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "VALLEDUPAR",
+      "tecnico": "Esteban Silvera",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "5/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "SINCELEJO",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "RIOHACHA",
+      "tecnico": "Davinson Melo",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "9/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "CACIQUE",
+      "tecnico": "Arnulfo Mendez",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "7/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "28/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "MAYORCA",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "MOLINOS",
+      "tecnico": "Edward Montoya",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "16/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "Motivo"
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "FLORIDA",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "FABRICATO",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "AMERICAS",
+      "tecnico": "Oscar Pabon",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "8/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "16/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "23/05/2026"
+        },
+        "4": {
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "Motivo"
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "BOGOTA NORTE",
+      "tecnico": "Juan Restrepo",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "7/05/2026"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "28/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "EDEN",
+      "tecnico": "Kevin Nicanor",
+      "semanas": {
+        "1": {
+          "estado": "verde",
+          "fecha": "9/05/2026",
+          "nov": "No envió reporte semana 1"
+        },
+        "2": {
+          "estado": "verde",
+          "fecha": "15/05/2026"
+        },
+        "3": {
+          "estado": "verde",
+          "fecha": "22/05/2026"
+        },
+        "4": {
+          "estado": "verde",
+          "fecha": "29/05/2026"
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "CRA 30",
+      "tecnico": "Sin Técnico",
+      "semanas": {
+        "1": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "2": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "3": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "4": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        }
+      }
+    }
+  ],
+  "inventario": [
+    {
+      "zona": "Caribe",
+      "tienda": "VALLEDUPAR",
+      "coord": "Ricardo Suarez Gamez",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "15/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 10%",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "MONTERIA",
+      "coord": "Arnold Julio",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "SINCELEJO",
+      "coord": "Yorlan Carmona",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "9/05/2026",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "22/05/2026",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "4VIENTOS",
+      "coord": "Henry Vergara",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible",
+          "cierre100": true,
+          "nov": "Vacaciones del 9 al 29 Mayo"
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true,
+          "nov": "Vacaciones 9-29 Mayo"
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible",
+          "cierre100": true,
+          "nov": "Vacaciones 9-29 Mayo"
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 20%",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "MAYORCA",
+      "coord": "VACANTE",
+      "semanas": {
+        "1": {
+          "reporto": "pendiente"
+        },
+        "2": {
+          "reporto": "pendiente"
+        },
+        "3": {
+          "reporto": true,
+          "nov": "Vacante"
+        },
+        "4": {
+          "reporto": "vacaciones",
+          "nov": "VACANTE"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "TRINITARIAS",
+      "coord": "Yair Reyes",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "5/05/2026",
+          "bodega": "Disponible 20%",
+          "cierre100": true,
+          "nov": "Cierre parcial"
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "12/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "22/05/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "NORTE",
+      "coord": "Milton Mercado",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Sin info",
+          "cierre100": true,
+          "nov": "Evacuación de bodega"
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "22/05/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "AMERICAS",
+      "coord": "Alvaro Gutierrez",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "7/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": "vacaciones",
+          "nov": "Incapacitado"
+        },
+        "3": {
+          "reporto": true,
+          "nov": "INCAPACIDAD"
+        },
+        "4": {
+          "reporto": "vacaciones",
+          "nov": "Incapacidad"
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "BOGOTA NORTE",
+      "coord": "Miguel Buitrago",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "7/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "14/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "FABRICATO",
+      "coord": "Oscar Rodriguez",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "cierre100": true,
+          "nov": "Vacaciones del 2 al 21 de Mayo"
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "15/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega Llena",
+          "cierre100": true,
+          "nov": "Vacaciones 2-21 Mayo"
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "FLORIDA",
+      "coord": "Mijail Alvarez",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "7/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "14/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 35%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "RIOHACHA",
+      "coord": "Orlando Fuentes",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Disponible",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 50%",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "PLAZUELA",
+      "coord": "Efrain Barrios",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "5/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "15/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "EDEN",
+      "coord": "Camilo Leon",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "7/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "13/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "23/05/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "SANTA MARTA",
+      "coord": "Jesus Ortiz",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "5/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true,
+          "nov": "Vacaciones Mayo 15 al 2 Junio"
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": "vacaciones",
+          "fecha": "100%",
+          "cierre100": true,
+          "nov": "Vacaciones Mayo 15-Jun 2"
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true,
+          "nov": "Vacaciones Mayo 15-Jun 2"
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "HIPER",
+      "coord": "Carlos Avendaño",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "9/05/2026",
+          "bodega": "Disponible",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "15/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "25/05/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "MOLINOS",
+      "coord": "Andres Rojas",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Disponible 70%",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "14/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "22/05/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Centro",
+      "tienda": "CACIQUE",
+      "coord": "Edwin Estrada",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": "pendiente",
+          "nov": "NUEVO"
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "23/05/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Atlántico",
+      "tienda": "PRINCIPAL",
+      "coord": "Mariano Lozano",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Evacuación",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "23/05/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Caribe",
+      "tienda": "SAN FELIPE",
+      "coord": "Elsy Barrios",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "8/05/2026",
+          "bodega": "Bodega llena",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 40%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Bodega  Llena",
+          "cierre100": true
+        }
+      }
+    },
+    {
+      "zona": "Bogotá",
+      "tienda": "CRA 30",
+      "coord": "Diego Valero",
+      "semanas": {
+        "1": {
+          "reporto": true,
+          "fecha": "9/05/2026",
+          "cierre100": true
+        },
+        "2": {
+          "reporto": true,
+          "fecha": "16/05/2026",
+          "cierre100": true
+        },
+        "3": {
+          "reporto": true,
+          "fecha": "22/05/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        },
+        "4": {
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
+        }
+      }
+    }
+  ],
+  "pistoleo": [
+    {
+      "ag": "01",
+      "nombre": "PRINCIPAL",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        null,
+        193,
+        190,
+        190,
+        196,
+        194,
+        199,
+        201,
+        188,
+        165,
+        24,
+        195,
+        214,
+        203,
+        200,
+        207,
+        195,
+        191,
+        189,
+        202,
+        190
+      ]
+    },
+    {
+      "ag": "10",
+      "nombre": "CUATRO VIENTOS",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        68,
+        75,
+        72,
+        75,
+        75,
+        79,
+        80,
+        81,
+        81,
+        81,
+        82,
+        82,
+        82,
+        83,
+        84,
+        84,
+        81,
+        78,
+        79,
+        80,
+        78
+      ]
+    },
+    {
+      "ag": "18",
+      "nombre": "BUCARAMANGA",
+      "zona": "Centro",
+      "vals": [
+        null,
+        52,
+        51,
+        49,
+        46,
+        46,
+        48,
+        48,
+        null,
+        50,
+        50,
+        47,
+        42,
+        44,
+        46,
+        48,
+        48,
+        48,
+        48,
+        48,
+        50,
+        50
+      ]
+    },
+    {
+      "ag": "20",
+      "nombre": "JAMAR METROPOLITANO",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        121,
+        121,
+        115,
+        117,
+        120,
+        120,
+        121,
+        120,
+        81,
+        120,
+        121,
+        120,
+        118,
+        120,
+        121,
+        117,
+        121,
+        117,
+        121,
+        120,
+        121
+      ]
+    },
+    {
+      "ag": "39",
+      "nombre": "JAMAR RIOHACHA",
+      "zona": "Caribe",
+      "vals": [
+        null,
+        null,
+        75,
+        73,
+        73,
+        77,
+        79,
+        81,
+        null,
+        81,
+        81,
+        77,
+        77,
+        null,
+        72,
+        71,
+        73,
+        73,
+        68,
+        79,
+        79,
+        79
+      ]
+    },
+    {
+      "ag": "F6",
+      "nombre": "VALLEDUPAR LOPERENA",
+      "zona": "Caribe",
+      "vals": [
+        null,
+        46,
+        42,
+        41,
+        43,
+        42,
+        43,
+        46,
+        46,
+        44,
+        45,
+        45,
+        45,
+        43,
+        46,
+        46,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+      ]
+    },
+    {
+      "ag": "55",
+      "nombre": "MONTERIA",
+      "zona": "Caribe",
+      "vals": [
+        null,
+        132,
+        128,
+        129,
+        130,
+        131,
+        134,
+        133,
+        132,
+        134,
+        134,
+        132,
+        128,
+        null,
+        133,
+        135,
+        119,
+        120,
+        122,
+        117,
+        122,
+        120
+      ]
+    },
+    {
+      "ag": "65",
+      "nombre": "JAMAR SINCELEJO",
+      "zona": "Caribe",
+      "vals": [
+        null,
+        126,
+        132,
+        130,
+        134,
+        128,
+        132,
+        131,
+        135,
+        130,
+        104,
+        137,
+        134,
+        130,
+        133,
+        129,
+        109,
+        122,
+        129,
+        132,
+        130,
+        132
+      ]
+    },
+    {
+      "ag": "67",
+      "nombre": "JAMAR SAN FELIPE",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        110,
+        101,
+        113,
+        null,
+        115,
+        113,
+        107,
+        104,
+        108,
+        114,
+        116,
+        115,
+        116,
+        109,
+        117,
+        115,
+        116,
+        106,
+        106,
+        109,
+        114
+      ]
+    },
+    {
+      "ag": "84",
+      "nombre": "JAMAR LA PLAZUELA",
+      "zona": "Caribe",
+      "vals": [
+        48,
+        47,
+        48,
+        48,
+        48,
+        48,
+        50,
+        50,
+        50,
+        52,
+        51,
+        48,
+        49,
+        50,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        50,
+        50
+      ]
+    },
+    {
+      "ag": "85",
+      "nombre": "SANTA MARTA",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        115,
+        116,
+        115,
+        109,
+        109,
+        113,
+        118,
+        115,
+        118,
+        117,
+        110,
+        115,
+        117,
+        119,
+        116,
+        120,
+        119,
+        120,
+        120,
+        122,
+        110
+      ]
+    },
+    {
+      "ag": "95",
+      "nombre": "JAMAR NORTE",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        179,
+        179,
+        179,
+        179,
+        179,
+        198,
+        176,
+        176,
+        176,
+        176,
+        null,
+        176,
+        176,
+        176,
+        176,
+        176,
+        176,
+        176,
+        176,
+        172,
+        175
+      ]
+    },
+    {
+      "ag": "A3",
+      "nombre": "MAYORCA CC MEDELLIN",
+      "zona": "Centro",
+      "vals": [
+        null,
+        152,
+        139,
+        145,
+        143,
+        143,
+        144,
+        143,
+        143,
+        143,
+        159,
+        156,
+        159,
+        null,
+        141,
+        141,
+        141,
+        null,
+        146,
+        140,
+        137,
+        144
+      ]
+    },
+    {
+      "ag": "A8",
+      "nombre": "MOLINOS CC MEDELLIN",
+      "zona": "Centro",
+      "vals": [
+        null,
+        168,
+        168,
+        166,
+        165,
+        164,
+        170,
+        168,
+        162,
+        167,
+        173,
+        170,
+        176,
+        null,
+        166,
+        161,
+        163,
+        165,
+        170,
+        153,
+        153,
+        159
+      ]
+    },
+    {
+      "ag": "B4",
+      "nombre": "JAMAR CC FLORIDA",
+      "zona": "Centro",
+      "vals": [
+        null,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        63,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72
+      ]
+    },
+    {
+      "ag": "B9",
+      "nombre": "JAMAR PLAZA AMERICAS",
+      "zona": "Bogotá",
+      "vals": [
+        null,
+        104,
+        116,
+        109,
+        100,
+        106,
+        97,
+        95,
+        93,
+        102,
+        98,
+        97,
+        102,
+        95,
+        80,
+        91,
+        87,
+        80,
+        88,
+        79,
+        81,
+        79
+      ]
+    },
+    {
+      "ag": "F7",
+      "nombre": "JAMAR NORTE BOGOTA",
+      "zona": "Bogotá",
+      "vals": [
+        null,
+        191,
+        185,
+        186,
+        181,
+        187,
+        182,
+        185,
+        186,
+        186,
+        182,
+        182,
+        180,
+        156,
+        179,
+        177,
+        176,
+        172,
+        171,
+        171,
+        176,
+        176
+      ]
+    },
+    {
+      "ag": "F8",
+      "nombre": "JAMAR FABRICATO",
+      "zona": "Centro",
+      "vals": [
+        null,
+        66,
+        77,
+        76,
+        72,
+        78,
+        79,
+        81,
+        79,
+        82,
+        80,
+        74,
+        81,
+        81,
+        77,
+        78,
+        78,
+        78,
+        84,
+        80,
+        80,
+        80
+      ]
+    },
+    {
+      "ag": "H1",
+      "nombre": "JAMAR EL EDEN",
+      "zona": "Bogotá",
+      "vals": [
+        null,
+        187,
+        181,
+        183,
+        182,
+        184,
+        182,
+        186,
+        186,
+        185,
+        186,
+        190,
+        188,
+        188,
+        190,
+        185,
+        185,
+        182,
+        185,
+        182,
+        185,
+        184
+      ]
+    },
+    {
+      "ag": "H4",
+      "nombre": "JAMAR CRA 30",
+      "zona": "Bogotá",
+      "vals": [
+        null,
+        267,
+        262,
+        258,
+        263,
+        257,
+        252,
+        260,
+        249,
+        248,
+        239,
+        243,
+        249,
+        249,
+        253,
+        244,
+        249,
+        249,
+        226,
+        249,
+        248,
+        252
+      ]
+    },
+    {
+      "ag": "XX",
+      "nombre": "HIPERJAMAR",
+      "zona": "Atlántico",
+      "vals": [
+        null,
+        null,
+        96,
+        96,
+        98,
+        97,
+        99,
+        101,
+        100,
+        116,
+        181,
+        86,
+        91,
+        88,
+        90,
+        91,
+        92,
+        94,
+        90,
+        91,
+        96,
+        98
+      ]
+    }
+  ]
+}
