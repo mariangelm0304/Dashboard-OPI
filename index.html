@@ -272,18 +272,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
     <i class="ti ti-dashboard" style="font-size:20px;opacity:.85"></i>
     <div>
       <h1 id="tab-titulo">DASHBOARD OPERATIVO</h1>
-      <p>SEGUIMIENTO · MAYO 2026</p>
+      <p id="hdr-subtitulo">SEGUIMIENTO · MAYO 2026</p>
     </div>
   </div>
   <div class="hcontrols">
     <div class="hctrl" id="ctrl-semana" style="">
+      <label>MES</label>
+      <select id="f-mes" onchange="onMesChange()"></select>
+    </div>
+    <div class="hctrl" id="ctrl-semana2" style="">
       <label>SEMANA</label>
       <select id="f-sem" onchange="aplicar()">
         <option value="todas">Todas</option>
-        <option value="1" selected="">Semana 1</option>
-        <option value="2">Semana 2</option>
-        <option value="3">Semana 3</option>
-        <option value="4">Semana 4</option>
       </select>
     </div>
     <div class="hctrl" id="ctrl-pist" style="display:none">
@@ -499,12 +499,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
       <div id="m-inv" class="msec active">
         <div class="mctrl">
           <label>Semana:</label>
-          <select id="e-inv-sem">
-            <option value="1">Semana 1</option>
-            <option value="2">Semana 2</option>
-            <option value="3">Semana 3</option>
-            <option value="4">Semana 4</option>
-          </select>
+          <select id="e-inv-sem"></select>
           <button class="btn btn-p" onclick="cargarEditorInv()"><i class="ti ti-refresh"></i> Cargar</button>
         </div>
         <div class="etbl-wrap">
@@ -522,12 +517,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
       <div id="m-cal" class="msec">
         <div class="mctrl">
           <label>Semana:</label>
-          <select id="e-cal-sem">
-            <option value="1">Semana 1</option>
-            <option value="2">Semana 2</option>
-            <option value="3">Semana 3</option>
-            <option value="4">Semana 4</option>
-          </select>
+          <select id="e-cal-sem"></select>
           <button class="btn btn-p" onclick="cargarEditorCal()"><i class="ti ti-refresh"></i> Cargar</button>
         </div>
         <div class="etbl-wrap">
@@ -624,6 +614,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
       <div id="m-help" class="msec">
         <div class="help-bx">
           <h3>Cómo usar el editor</h3>
+          <div style="background:var(--verde-l);border-left:3px solid var(--verde-d);padding:10px 14px;border-radius:6px;margin-bottom:14px">
+            <strong style="color:var(--verde-d)">📅 Agregar nuevo mes</strong><br>
+            <span style="font-size:12px;color:var(--g7)">Haz clic en <strong>"+ Agregar mes"</strong> (botón abajo) para crear el siguiente mes con 4 semanas nuevas. Se agrega automáticamente a Inventario y Calidad de todas las tiendas como "Pendiente".</span>
+          </div>
           <h4>📋 Calidad e Inventario</h4>
           <ol>
             <li>Selecciona la semana (1, 2, 3 o 4) y haz clic en <strong>"Cargar"</strong></li>
@@ -657,6 +651,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
     <div class="mftr">
       <span class="mftr-left" id="save-status"></span>
       <button class="btn btn-w" onclick="resetearDatos()"><i class="ti ti-refresh"></i> Resetear datos</button>
+      <button class="btn btn-s" onclick="agregarMesPeriodo()" id="btn-agregar-mes"><i class="ti ti-calendar-plus"></i> + Agregar mes</button>
       <button class="btn btn-g" onclick="guardarCambios()"><i class="ti ti-device-floppy"></i> Guardar cambios</button>
       <button class="btn btn-p" onclick="descargarHTML()"><i class="ti ti-download"></i> Descargar archivo actualizado</button>
       <button class="btn btn-s" onclick="cerrarEditor()">Cerrar</button>
@@ -791,12 +786,23 @@ const pistoleo = [
 // ================================================================
 const DATA_VERSION = 'd5fee1b896d1';
 
+// ================================================================
+// PERÍODOS (MESES) - Sistema infinito de meses
+// Cada período tiene: id, nombre, semanas (array de números)
+// Los números de semana son claves en el objeto .semanas de cada tienda
+// Período 1 = Mayo 2026 (semanas 1-4), Período 2 = Junio 2026 (semanas 5-8), etc.
+// ================================================================
+const periodos = [
+  { id: 1, nombre: 'Mayo 2026',   sems: [1, 2, 3, 4] }
+];
+
 function autoGuardar() {
   try {
     localStorage.setItem('jv', DATA_VERSION);
     localStorage.setItem('jc', JSON.stringify(calidad));
     localStorage.setItem('ji', JSON.stringify(inventario));
     localStorage.setItem('jp', JSON.stringify(pistoleo));
+    localStorage.setItem('jper', JSON.stringify(periodos));
   } catch(e) {}
 }
 
@@ -804,16 +810,18 @@ function cargarGuardados() {
   try {
     if (localStorage.getItem('jv') !== DATA_VERSION) {
       // Versión nueva en GitHub → usar datos del archivo
-      ['jv','jc','ji','jp'].forEach(k => localStorage.removeItem(k));
+      ['jv','jc','ji','jp','jper'].forEach(k => localStorage.removeItem(k));
       localStorage.setItem('jv', DATA_VERSION);
       return;
     }
     const jc = localStorage.getItem('jc');
     const ji = localStorage.getItem('ji');
     const jp = localStorage.getItem('jp');
+    const jper = localStorage.getItem('jper');
     if (jc) { const p=JSON.parse(jc); calidad.length=0; p.forEach(t=>calidad.push(t)); }
     if (ji) { const p=JSON.parse(ji); inventario.length=0; p.forEach(t=>inventario.push(t)); }
     if (jp) { const p=JSON.parse(jp); pistoleo.length=0; p.forEach(t=>pistoleo.push(t)); }
+    if (jper) { const p=JSON.parse(jper); periodos.length=0; p.forEach(x=>periodos.push(x)); }
   } catch(e) {}
 }
 
@@ -889,7 +897,7 @@ function estadoInv(semData) {
 function estadoInvConsol(tienda) {
   const sem = semActual;
   if (sem!=='todas') return estadoInv(tienda.semanas[parseInt(sem)]);
-  const all = [1,2,3,4].map(s=>estadoInv(tienda.semanas[s]));
+  const all = todasSemsActivas().map(s=>estadoInv(tienda.semanas[s]));
   const cd = all.filter(e=>e!=='pendiente');
   if (!cd.length) return 'pendiente';
   if (cd.includes('rojo')) return 'rojo';
@@ -904,7 +912,7 @@ function estadoInvConsol(tienda) {
 function estadoCalConsol(tienda) {
   const sem = semActual;
   if (sem!=='todas') return tienda.semanas[parseInt(sem)]?.estado || 'pendiente';
-  const all = [1,2,3,4].map(s=>tienda.semanas[s]?.estado);
+  const all = todasSemsActivas().map(s=>tienda.semanas[s]?.estado);
   const cd = all.filter(e=>e&&e!=='pendiente');
   if (!cd.length) return 'pendiente';
   if (cd.every(e=>e==='rojo')) return 'rojo';
@@ -928,7 +936,12 @@ function renderInv() {
   const pct = eleg>0 ? Math.round(rep/eleg*1000)/10 : 0;
 
   // Info filtro
-  document.getElementById('finfo-inv').textContent = semActual==='todas' ? 'Todas las semanas' : 'Semana '+semActual;
+  const _fmesId = parseInt(document.getElementById('f-mes')?.value||1);
+  const _fper = periodos.find(p=>p.id===_fmesId)||periodos[0];
+  const _fsemIdx = _fper ? _fper.sems.indexOf(parseInt(semActual)) : -1;
+  const _fsemLabel = semActual==='todas' ? 'Todas las semanas'
+    : (_fper ? _fper.nombre + ' · S' + (_fsemIdx+1) : 'Semana '+semActual);
+  document.getElementById('finfo-inv').textContent = _fsemLabel;
 
   // KPIs
   document.getElementById('kpi-inv').innerHTML =
@@ -991,7 +1004,7 @@ function renderInv() {
   const novs = [];
   cons.forEach(t=>{
     if (semActual==='todas') {
-      [1,2,3,4].forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:estadoInv(t.semanas[s])}) });
+      todasSemsActivas().forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:estadoInv(t.semanas[s])}) });
     } else {
       const sd = t.semanas[parseInt(semActual)];
       if (sd?.nov) novs.push({t,sem:semActual,nov:sd.nov,est:estadoInv(sd)});
@@ -1017,7 +1030,12 @@ function renderCal() {
   const eleg = total - sinTec - pend;
   const pct = eleg>0 ? Math.round(conRep/eleg*1000)/10 : 0;
 
-  document.getElementById('finfo-cal').textContent = semActual==='todas'?'Todas las semanas':'Semana '+semActual;
+  const _fcmesId = parseInt(document.getElementById('f-mes')?.value||1);
+  const _fcper = periodos.find(p=>p.id===_fcmesId)||periodos[0];
+  const _fcsemIdx = _fcper ? _fcper.sems.indexOf(parseInt(semActual)) : -1;
+  const _fcsemLabel = semActual==='todas' ? 'Todas las semanas'
+    : (_fcper ? _fcper.nombre + ' · S' + (_fcsemIdx+1) : 'Semana '+semActual);
+  document.getElementById('finfo-cal').textContent = _fcsemLabel;
 
   document.getElementById('kpi-cal').innerHTML =
     kpiHTML('kr','ti-building-store','Total Tiendas',total,'')+
@@ -1075,7 +1093,7 @@ function renderCal() {
   const novs = [];
   cons.forEach(t=>{
     if (semActual==='todas') {
-      [1,2,3,4].forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:t.semanas[s].estado}) });
+      todasSemsActivas().forEach(s=>{ if(t.semanas[s]?.nov) novs.push({t,sem:s,nov:t.semanas[s].nov,est:t.semanas[s].estado}) });
     } else {
       const sd = t.semanas[parseInt(semActual)];
       if (sd?.nov) novs.push({t,sem:semActual,nov:sd.nov,est:sd.estado});
@@ -1269,6 +1287,7 @@ function cambiarTab(tab, btn) {
   const titulos={inv:'INVENTARIO CÍCLICO',cal:'BITÁCORAS DE CALIDAD',pist:'SEGUIMIENTO DE PISTOLEO'};
   document.getElementById('tab-titulo').textContent = titulos[tab];
   document.getElementById('ctrl-semana').style.display = tab==='pist'?'none':'';
+  document.getElementById('ctrl-semana2').style.display = tab==='pist'?'none':'';
   document.getElementById('ctrl-pist').style.display = tab==='pist'?'':'none';
   render();
 }
@@ -1280,11 +1299,100 @@ function aplicar() {
   render();
 }
 
+// Cambia mes → reconstruye selector de semanas y aplica
+function onMesChange() {
+  const mesId = parseInt(document.getElementById('f-mes').value);
+  poblarSemanaSelector(mesId);
+  // Update header subtitle
+  const per = periodos.find(p=>p.id===mesId);
+  const sub = document.getElementById('hdr-subtitulo');
+  if (sub && per) sub.textContent = 'SEGUIMIENTO · ' + per.nombre.toUpperCase();
+  aplicar();
+}
+
+// Devuelve array de todos los números de semana de todos los períodos
+function todasSemsActivas() {
+  const all = [];
+  periodos.forEach(p => p.sems.forEach(s => { if (!all.includes(s)) all.push(s); }));
+  all.sort((a,b)=>a-b);
+  return all;
+}
+
+// Devuelve las semanas del período activo (por el selector f-mes)
+function semsDelMesActual() {
+  const mesId = parseInt(document.getElementById('f-mes')?.value || periodos[0].id);
+  const per = periodos.find(p=>p.id===mesId) || periodos[0];
+  return per ? per.sems : [];
+}
+
+// Construye las opciones del selector f-sem según el mes elegido
+function poblarSemanaSelector(mesId) {
+  const sel = document.getElementById('f-sem');
+  const per = periodos.find(p=>p.id===mesId) || periodos[0];
+  sel.innerHTML = '<option value="todas">Todas</option>';
+  if (per) {
+    per.sems.forEach((s,i) => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = 'Semana ' + (i+1);
+      sel.appendChild(opt);
+    });
+  }
+  // Select first week by default
+  if (sel.options.length > 1) sel.selectedIndex = 1;
+  semActual = sel.value;
+}
+
+// Construye selector de meses en el header
+function poblarMesSelector() {
+  const sel = document.getElementById('f-mes');
+  if (!sel) return;
+  const prevVal = sel.value;
+  sel.innerHTML = '';
+  periodos.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.id;
+    opt.textContent = p.nombre;
+    sel.appendChild(opt);
+  });
+  // Try to keep selected month
+  const found = Array.from(sel.options).find(o=>o.value===prevVal);
+  if (found) sel.value = prevVal;
+  else sel.selectedIndex = sel.options.length - 1; // latest month
+  poblarSemanaSelector(parseInt(sel.value));
+  // Update header subtitle
+  const mesId = parseInt(sel.value);
+  const per = periodos.find(p=>p.id===mesId);
+  const sub = document.getElementById('hdr-subtitulo');
+  if (sub && per) sub.textContent = 'SEGUIMIENTO · ' + per.nombre.toUpperCase();
+}
+
+// Construye selector de semanas en los editores del modal
+function poblarEditorSemSelector(idSel) {
+  const sel = document.getElementById(idSel);
+  if (!sel) return;
+  const prevVal = sel.value;
+  sel.innerHTML = '';
+  periodos.forEach((p,pi) => {
+    p.sems.forEach((s,si) => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = p.nombre + ' · Semana ' + (si+1);
+      sel.appendChild(opt);
+    });
+  });
+  // Restore previous selection if possible
+  const found = Array.from(sel.options).find(o=>o.value===prevVal);
+  if (found) sel.value = prevVal;
+}
+
 // ================================================================
 // EDITOR
 // ================================================================
 function abrirEditor() {
   document.getElementById('modal').classList.add('open');
+  poblarEditorSemSelector('e-inv-sem');
+  poblarEditorSemSelector('e-cal-sem');
   // Cargar la pestaña activa del editor
   const activa = document.querySelector('.msec.active')?.id;
   if (activa==='m-inv') cargarEditorInv();
@@ -1301,8 +1409,8 @@ function cambiarMTab(id, btn) {
   document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  if (id==='m-inv') cargarEditorInv();
-  else if (id==='m-cal') cargarEditorCal();
+  if (id==='m-inv') { poblarEditorSemSelector('e-inv-sem'); cargarEditorInv(); }
+  else if (id==='m-cal') { poblarEditorSemSelector('e-cal-sem'); cargarEditorCal(); }
   else if (id==='m-pist') cargarEditorPist();
 }
 
@@ -1426,6 +1534,53 @@ function guardarEditorPist() {
   });
 }
 
+function agregarMesPeriodo() {
+  // Calcular siguiente número de período y semanas
+  const lastPer = periodos[periodos.length - 1];
+  const nextId  = lastPer.id + 1;
+  const lastSem = Math.max(...lastPer.sems);
+  const nextSems = [lastSem+1, lastSem+2, lastSem+3, lastSem+4];
+
+  // Nombre del mes: avanzar calendario desde el último período
+  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  // Parse last period name e.g. "Mayo 2026"
+  let [nombreMes, anio] = lastPer.nombre.split(' ');
+  let mesIdx = MESES.indexOf(nombreMes);
+  mesIdx = (mesIdx + 1) % 12;
+  let anioNum = parseInt(anio);
+  if (mesIdx === 0) anioNum++;
+  const nextNombre = MESES[mesIdx] + ' ' + anioNum;
+
+  // Ask confirmation
+  if (!confirm('¿Agregar ' + nextNombre + ' con semanas S' + nextSems[0] + '–S' + nextSems[3] + '?')) return;
+
+  // Add period
+  periodos.push({ id: nextId, nombre: nextNombre, sems: nextSems });
+
+  // Add semanas to all calidad and inventario entries
+  calidad.forEach(t => {
+    nextSems.forEach(s => { if (!t.semanas[s]) t.semanas[s] = {estado:'pendiente'}; });
+  });
+  inventario.forEach(t => {
+    nextSems.forEach(s => { if (!t.semanas[s]) t.semanas[s] = {reporto:'pendiente'}; });
+  });
+
+  // Refresh all selectors
+  poblarMesSelector();
+  poblarEditorSemSelector('e-inv-sem');
+  poblarEditorSemSelector('e-cal-sem');
+
+  // Select the new month
+  document.getElementById('f-mes').value = nextId;
+  poblarSemanaSelector(nextId);
+  semActual = document.getElementById('f-sem').value;
+
+  autoGuardar();
+  render();
+  toast('✓ ' + nextNombre + ' agregado con 4 semanas nuevas');
+}
+
 function agregarSemPist() {
   pistoleo.forEach(t=>t.vals.push(null));
   const num = pistoleo[0].vals.length;
@@ -1466,6 +1621,7 @@ function guardarCambios() {
   const tabIdx  = {inv:0, cal:1, pist:2};
   if (tabBtns[tabIdx[tabActual]]) tabBtns[tabIdx[tabActual]].classList.add('active');
   document.getElementById('ctrl-semana').style.display = tabActual==='pist'?'none':'';
+  document.getElementById('ctrl-semana2').style.display = tabActual==='pist'?'none':'';
   document.getElementById('ctrl-pist').style.display   = tabActual==='pist'?'':'none';
   const titulos = {inv:'INVENTARIO CÍCLICO',cal:'BITÁCORAS DE CALIDAD',pist:'SEGUIMIENTO DE PISTOLEO'};
   document.getElementById('tab-titulo').textContent = titulos[tabActual];
@@ -1487,14 +1643,14 @@ function exportarDatosActuales() {
   const wb = XLSX.utils.book_new();
   // Hoja Calidad
   const cRows = [['zona','tienda','tecnico','semana','estado','fecha','novedad']];
-  calidad.forEach(t=>{[1,2,3,4].forEach(s=>{
+  calidad.forEach(t=>{todasSemsActivas().forEach(s=>{
     const sd=t.semanas[s]||{};
     cRows.push([t.zona,t.tienda,t.tecnico,s,sd.estado||'pendiente',sd.fecha||'',sd.nov||'']);
   })});
   XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(cRows), 'Calidad');
   // Hoja Inventario
   const iRows = [['zona','tienda','coord','semana','reporto','fecha','bodega','cierre100','fotos','novedad']];
-  inventario.forEach(t=>{[1,2,3,4].forEach(s=>{
+  inventario.forEach(t=>{todasSemsActivas().forEach(s=>{
     const sd=t.semanas[s]||{};
     const r=sd.reporto===true?'si':sd.reporto===false?'no':sd.reporto==='vacaciones'?'vacaciones':'pendiente';
     iRows.push([t.zona,t.tienda,t.coord,s,r,sd.fecha||'',sd.bodega||'',sd.cierre100===true?'true':sd.cierre100===false?'false':'',sd.fotos||'',sd.nov||'']);
@@ -1601,7 +1757,8 @@ function exportarJSON() {
     fecha: new Date().toISOString(),
     calidad: calidad,
     inventario: inventario,
-    pistoleo: pistoleo
+    pistoleo: pistoleo,
+    periodos: periodos
   };
   const json = JSON.stringify(respaldo, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
@@ -1669,6 +1826,9 @@ function importarJSON(evt) {
       calidad.length = 0;   calData.forEach(t  => calidad.push(t));
       inventario.length = 0; invData.forEach(t  => inventario.push(t));
       pistoleo.length = 0;   pistData.forEach(t => pistoleo.push(t));
+      if (Array.isArray(raw.periodos) && raw.periodos.length) {
+        periodos.length = 0; raw.periodos.forEach(p => periodos.push(p));
+      }
 
       // Actualizar selector de semanas pistoleo
       const numSem = pistoleo[0].vals.length;
@@ -1691,7 +1851,10 @@ function importarJSON(evt) {
         ' · ' + pistData.length + ' tiendas pistoleo' +
         ' · ' + numSem + ' semanas pistoleo</small></div>';
 
-      // Re-renderizar el dashboard completo
+      // Re-poblar selectores y re-renderizar
+      poblarMesSelector();
+      poblarEditorSemSelector('e-inv-sem');
+      poblarEditorSemSelector('e-cal-sem');
       render();
       toast('Respaldo JSON importado ✓');
 
@@ -1742,11 +1905,13 @@ function finalizarInit() {
   const selPist = document.getElementById('f-spist');
   selPist.innerHTML = '<option value="todas">Todas</option>';
   for(let i=1; i<=numSem; i++) selPist.innerHTML += `<option value="${i}">S${i}</option>`;
+  // Poblar selectores de mes/semana
+  poblarMesSelector();
   // Mostrar controles del tab inicial (inventario)
   document.getElementById('ctrl-semana').style.display = '';
+  document.getElementById('ctrl-semana2').style.display = '';
   document.getElementById('ctrl-pist').style.display   = 'none';
-  document.getElementById('f-sem').value = '1';
-  semActual = '1';
+  // semActual ya fue seteado por poblarMesSelector → poblarSemanaSelector
   // Renderizar
   renderInv();
 }
@@ -1779,6 +1944,9 @@ window.addEventListener('load', ()=>{
       calidad.length = 0;   calData.forEach(t  => calidad.push(t));
       inventario.length = 0; invData.forEach(t  => inventario.push(t));
       pistoleo.length = 0;   pistData.forEach(t => pistoleo.push(t));
+      if (Array.isArray(raw.periodos) && raw.periodos.length) {
+        periodos.length = 0; raw.periodos.forEach(p => periodos.push(p));
+      }
       // Guardar también en localStorage para sesiones offline
       autoGuardar();
       finalizarInit();
