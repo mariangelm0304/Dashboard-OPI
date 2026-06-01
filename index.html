@@ -1735,10 +1735,9 @@ function toast(msg, isErr) {
 // ================================================================
 // INIT
 // ================================================================
-window.addEventListener('load', ()=>{
-  // Cargar datos guardados o del archivo según versión
-  cargarGuardados();
-  // Sincronizar selector pistoleo con semanas actuales (puede haber más por localStorage)
+
+function finalizarInit() {
+  // Sincronizar selector pistoleo con semanas actuales
   const numSem = pistoleo[0].vals.length;
   const selPist = document.getElementById('f-spist');
   selPist.innerHTML = '<option value="todas">Todas</option>';
@@ -1750,6 +1749,45 @@ window.addEventListener('load', ()=>{
   semActual = '1';
   // Renderizar
   renderInv();
+}
+
+window.addEventListener('load', ()=>{
+  // Intentar cargar backup.json del repositorio automáticamente
+  // Se añade ?_v=timestamp para evitar caché del navegador
+  fetch('backup.json?_v=' + Date.now())
+    .then(res => {
+      if (!res.ok) throw new Error('No encontrado');
+      return res.json();
+    })
+    .then(raw => {
+      let calData, invData, pistData;
+      if (Array.isArray(raw.calidad) && Array.isArray(raw.inventario) && Array.isArray(raw.pistoleo)) {
+        calData  = raw.calidad;
+        invData  = raw.inventario;
+        pistData = raw.pistoleo;
+      } else if (raw.jc && raw.ji && raw.jp) {
+        calData  = typeof raw.jc === 'string' ? JSON.parse(raw.jc) : raw.jc;
+        invData  = typeof raw.ji === 'string' ? JSON.parse(raw.ji) : raw.ji;
+        pistData = typeof raw.jp === 'string' ? JSON.parse(raw.jp) : raw.jp;
+      } else {
+        throw new Error('Formato no reconocido');
+      }
+      if (!Array.isArray(calData)||!calData.length||!Array.isArray(invData)||!invData.length||!Array.isArray(pistData)||!pistData.length) {
+        throw new Error('Datos vacíos');
+      }
+      // Reemplazar datos en memoria con los del JSON del repo
+      calidad.length = 0;   calData.forEach(t  => calidad.push(t));
+      inventario.length = 0; invData.forEach(t  => inventario.push(t));
+      pistoleo.length = 0;   pistData.forEach(t => pistoleo.push(t));
+      // Guardar también en localStorage para sesiones offline
+      autoGuardar();
+      finalizarInit();
+    })
+    .catch(() => {
+      // Si no existe backup.json (local o primer uso), usar localStorage normal
+      cargarGuardados();
+      finalizarInit();
+    });
 });
 </script>
 
