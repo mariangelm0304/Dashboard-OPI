@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-06-01T19:45:24.983Z",
+  "fecha": "2026-06-09T15:57:34.663Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -22,6 +22,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -45,6 +58,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -68,6 +94,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -91,6 +130,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -114,6 +166,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "6/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -137,6 +202,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -160,6 +238,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -187,6 +278,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -210,6 +315,19 @@
         "4": {
           "estado": "verde",
           "fecha": "27/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -233,6 +351,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "4/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -260,6 +391,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -283,6 +428,19 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -306,6 +464,19 @@
         "4": {
           "estado": "verde",
           "fecha": "28/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "5/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -333,6 +504,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -356,6 +541,19 @@
         "4": {
           "estado": "verde",
           "fecha": "1/06/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "4/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -383,6 +581,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -410,6 +622,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -433,6 +659,19 @@
         "4": {
           "estado": "verde",
           "fecha": "1/06/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "4/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -456,6 +695,19 @@
         "4": {
           "estado": "verde",
           "fecha": "28/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "6/06/2026"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -480,6 +732,20 @@
         "4": {
           "estado": "verde",
           "fecha": "29/05/2026"
+        },
+        "5": {
+          "estado": "verde",
+          "fecha": "6/06/2026",
+          "nov": "No envió reporte semana 1"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     },
@@ -507,6 +773,20 @@
           "estado": "rojo",
           "fecha": "—",
           "nov": "Tienda sin técnico asignado"
+        },
+        "5": {
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
+        },
+        "6": {
+          "estado": "pendiente"
+        },
+        "7": {
+          "estado": "pendiente"
+        },
+        "8": {
+          "estado": "pendiente"
         }
       }
     }
@@ -539,6 +819,18 @@
           "fecha": "100%",
           "bodega": "Disponible 10%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -568,6 +860,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -596,6 +900,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -629,6 +945,18 @@
           "fecha": "100%",
           "bodega": "Disponible 20%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -650,6 +978,18 @@
         "4": {
           "reporto": "vacaciones",
           "nov": "VACANTE"
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -681,6 +1021,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -712,6 +1064,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -737,6 +1101,18 @@
         "4": {
           "reporto": "vacaciones",
           "nov": "Incapacidad"
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -767,6 +1143,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -798,6 +1186,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -828,6 +1228,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -858,6 +1270,18 @@
           "fecha": "100%",
           "bodega": "Disponible 50%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -888,6 +1312,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -918,6 +1354,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -950,6 +1398,18 @@
           "bodega": "Bodega  Llena",
           "cierre100": true,
           "nov": "Vacaciones Mayo 15-Jun 2"
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -980,6 +1440,18 @@
           "fecha": "100%",
           "bodega": "Disponible 30%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -1010,6 +1482,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -1039,6 +1523,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -1069,6 +1565,18 @@
           "fecha": "100%",
           "bodega": "Disponible 30%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -1099,6 +1607,18 @@
           "fecha": "100%",
           "bodega": "Bodega  Llena",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     },
@@ -1128,6 +1648,18 @@
           "fecha": "100%",
           "bodega": "Disponible 30%",
           "cierre100": true
+        },
+        "5": {
+          "reporto": "pendiente"
+        },
+        "6": {
+          "reporto": "pendiente"
+        },
+        "7": {
+          "reporto": "pendiente"
+        },
+        "8": {
+          "reporto": "pendiente"
         }
       }
     }
@@ -1159,7 +1691,8 @@
         191,
         189,
         202,
-        190
+        190,
+        181
       ]
     },
     {
@@ -1188,7 +1721,8 @@
         78,
         79,
         80,
-        78
+        78,
+        77
       ]
     },
     {
@@ -1217,7 +1751,8 @@
         48,
         48,
         50,
-        50
+        50,
+        48
       ]
     },
     {
@@ -1246,6 +1781,7 @@
         117,
         121,
         120,
+        121,
         121
       ]
     },
@@ -1275,7 +1811,8 @@
         68,
         79,
         79,
-        79
+        79,
+        78
       ]
     },
     {
@@ -1299,6 +1836,7 @@
         43,
         46,
         46,
+        45,
         45,
         45,
         45,
@@ -1333,7 +1871,8 @@
         122,
         117,
         122,
-        120
+        120,
+        108
       ]
     },
     {
@@ -1362,7 +1901,8 @@
         129,
         132,
         130,
-        132
+        132,
+        114
       ]
     },
     {
@@ -1391,6 +1931,7 @@
         106,
         106,
         109,
+        114,
         114
       ]
     },
@@ -1420,7 +1961,8 @@
         51,
         51,
         50,
-        50
+        50,
+        null
       ]
     },
     {
@@ -1449,7 +1991,8 @@
         120,
         120,
         122,
-        110
+        110,
+        118
       ]
     },
     {
@@ -1478,7 +2021,8 @@
         176,
         176,
         172,
-        175
+        176,
+        217
       ]
     },
     {
@@ -1507,7 +2051,8 @@
         146,
         140,
         137,
-        144
+        144,
+        145
       ]
     },
     {
@@ -1536,7 +2081,8 @@
         170,
         153,
         153,
-        159
+        159,
+        163
       ]
     },
     {
@@ -1560,6 +2106,7 @@
         72,
         72,
         63,
+        72,
         72,
         72,
         72,
@@ -1594,7 +2141,8 @@
         88,
         79,
         81,
-        79
+        79,
+        88
       ]
     },
     {
@@ -1622,6 +2170,7 @@
         172,
         171,
         171,
+        176,
         176,
         176
       ]
@@ -1652,7 +2201,8 @@
         84,
         80,
         80,
-        80
+        80,
+        83
       ]
     },
     {
@@ -1681,7 +2231,8 @@
         185,
         182,
         185,
-        184
+        184,
+        185
       ]
     },
     {
@@ -1710,7 +2261,8 @@
         226,
         249,
         248,
-        252
+        252,
+        247
       ]
     },
     {
@@ -1739,7 +2291,8 @@
         90,
         91,
         96,
-        98
+        98,
+        92
       ]
     }
   ],
@@ -1752,6 +2305,16 @@
         2,
         3,
         4
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Junio 2026",
+      "sems": [
+        5,
+        6,
+        7,
+        8
       ]
     }
   ]
