@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-06-09T21:37:25.607Z",
+  "fecha": "2026-06-16T14:31:06.177Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -28,7 +28,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -64,7 +65,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -100,7 +102,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -136,7 +139,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -172,7 +176,8 @@
           "fecha": "6/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -208,7 +213,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -244,7 +250,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "13/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -285,7 +292,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -321,7 +329,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "13/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -357,7 +366,8 @@
           "fecha": "4/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -398,7 +408,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -434,7 +445,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "13/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -470,7 +482,8 @@
           "fecha": "5/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "13/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -511,7 +524,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -547,7 +561,8 @@
           "fecha": "4/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "14/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -588,7 +603,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -629,7 +645,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -665,7 +682,8 @@
           "fecha": "4/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "14/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -701,7 +719,8 @@
           "fecha": "6/06/2026"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -739,7 +758,8 @@
           "nov": "No envió reporte semana 1"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "12/06/2026"
         },
         "7": {
           "estado": "pendiente"
@@ -780,7 +800,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "6": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "7": {
           "estado": "pendiente"
@@ -826,7 +847,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "11/06/2026",
+          "bodega": "Disponible 10%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -869,7 +893,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "13/06/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -911,7 +938,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -958,7 +988,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -992,7 +1025,9 @@
           "nov": "NUEVO"
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "cierre100": true,
+          "nov": "Capacitación"
         },
         "7": {
           "reporto": "pendiente"
@@ -1037,7 +1072,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Bodega Llena ",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1082,7 +1120,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "13/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1120,7 +1161,9 @@
           "nov": "INCAPACIDAD"
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "cierre100": true,
+          "nov": "Incapacidad"
         },
         "7": {
           "reporto": "pendiente"
@@ -1164,7 +1207,8 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "Vacaciones"
         },
         "7": {
           "reporto": "pendiente"
@@ -1209,7 +1253,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Disponible 60%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1253,7 +1300,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1297,7 +1347,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "13/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1341,7 +1394,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Disponible 20%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1385,7 +1441,8 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "Incapacidad"
         },
         "7": {
           "reporto": "pendiente"
@@ -1431,7 +1488,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Disponible 10%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1475,7 +1535,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1519,7 +1582,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1562,7 +1628,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "13/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1606,7 +1675,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 40%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1650,7 +1722,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "bodega": "Bodega llena 90%",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1693,7 +1768,10 @@
           "cierre100": true
         },
         "6": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "10/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "7": {
           "reporto": "pendiente"
@@ -1732,7 +1810,8 @@
         189,
         202,
         190,
-        181
+        181,
+        15
       ]
     },
     {
@@ -1762,6 +1841,7 @@
         79,
         80,
         78,
+        77,
         77
       ]
     },
@@ -1792,7 +1872,8 @@
         48,
         50,
         50,
-        48
+        48,
+        50
       ]
     },
     {
@@ -1821,6 +1902,7 @@
         117,
         121,
         120,
+        121,
         121,
         121
       ]
@@ -1852,7 +1934,8 @@
         79,
         79,
         79,
-        78
+        78,
+        79
       ]
     },
     {
@@ -1876,6 +1959,7 @@
         43,
         46,
         46,
+        45,
         45,
         45,
         45,
@@ -1912,7 +1996,8 @@
         117,
         122,
         120,
-        108
+        108,
+        110
       ]
     },
     {
@@ -1942,7 +2027,8 @@
         132,
         130,
         132,
-        114
+        114,
+        117
       ]
     },
     {
@@ -1972,7 +2058,8 @@
         106,
         109,
         114,
-        114
+        114,
+        110
       ]
     },
     {
@@ -2002,7 +2089,8 @@
         51,
         50,
         50,
-        null
+        null,
+        57
       ]
     },
     {
@@ -2032,7 +2120,8 @@
         120,
         122,
         110,
-        118
+        118,
+        120
       ]
     },
     {
@@ -2062,7 +2151,8 @@
         176,
         172,
         176,
-        217
+        217,
+        177
       ]
     },
     {
@@ -2092,7 +2182,8 @@
         140,
         137,
         144,
-        145
+        145,
+        147
       ]
     },
     {
@@ -2122,7 +2213,8 @@
         153,
         153,
         159,
-        163
+        163,
+        162
       ]
     },
     {
@@ -2146,6 +2238,7 @@
         72,
         72,
         63,
+        72,
         72,
         72,
         72,
@@ -2182,7 +2275,8 @@
         79,
         81,
         79,
-        88
+        88,
+        82
       ]
     },
     {
@@ -2212,7 +2306,8 @@
         171,
         176,
         176,
-        176
+        176,
+        172
       ]
     },
     {
@@ -2242,6 +2337,7 @@
         80,
         80,
         80,
+        83,
         83
       ]
     },
@@ -2272,7 +2368,8 @@
         182,
         185,
         184,
-        185
+        185,
+        184
       ]
     },
     {
@@ -2302,7 +2399,8 @@
         249,
         248,
         252,
-        247
+        247,
+        241
       ]
     },
     {
@@ -2332,7 +2430,8 @@
         91,
         96,
         98,
-        92
+        92,
+        98
       ]
     }
   ],
