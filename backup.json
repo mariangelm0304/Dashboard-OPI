@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-06-16T14:31:06.177Z",
+  "fecha": "2026-06-22T15:36:13.046Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -32,7 +32,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "19/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -69,7 +70,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "18/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -106,7 +108,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "19/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -143,7 +146,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "18/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -180,7 +184,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -217,7 +222,9 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "VACACIONES"
         },
         "8": {
           "estado": "pendiente"
@@ -254,7 +261,8 @@
           "fecha": "13/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -296,7 +304,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -333,7 +343,9 @@
           "fecha": "13/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "VACACIONES"
         },
         "8": {
           "estado": "pendiente"
@@ -370,7 +382,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "19/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -412,7 +425,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -449,7 +464,8 @@
           "fecha": "13/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -486,7 +502,8 @@
           "fecha": "13/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -528,7 +545,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -565,7 +584,8 @@
           "fecha": "14/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "18/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -607,7 +627,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -649,7 +671,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -686,7 +710,8 @@
           "fecha": "14/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "19/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -723,7 +748,8 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "17/06/2026"
         },
         "8": {
           "estado": "pendiente"
@@ -762,7 +788,9 @@
           "fecha": "12/06/2026"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "21/06/2026",
+          "nov": "No envió reporte semana 1"
         },
         "8": {
           "estado": "pendiente"
@@ -804,7 +832,9 @@
           "fecha": "—"
         },
         "7": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—",
+          "nov": "Tienda sin técnico asignado"
         },
         "8": {
           "estado": "pendiente"
@@ -853,7 +883,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -899,7 +931,10 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "bodega": "Disponible 30%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -944,7 +979,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -994,7 +1031,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1030,7 +1069,8 @@
           "nov": "Capacitación"
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "CAPACITACIÓN"
         },
         "8": {
           "reporto": "pendiente"
@@ -1078,7 +1118,10 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/06/2026",
+          "bodega": "Disponible 30%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1126,7 +1169,10 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/06/2026",
+          "bodega": "Bodega Llena",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1166,7 +1212,8 @@
           "nov": "Incapacidad"
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "INCAPACIDAD"
         },
         "8": {
           "reporto": "pendiente"
@@ -1211,7 +1258,8 @@
           "nov": "Vacaciones"
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "Vacaciones"
         },
         "8": {
           "reporto": "pendiente"
@@ -1221,7 +1269,7 @@
     {
       "zona": "Centro",
       "tienda": "FABRICATO",
-      "coord": "Oscar Rodriguez",
+      "coord": "Mijail Alvarez",
       "semanas": {
         "1": {
           "reporto": true,
@@ -1259,7 +1307,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1269,7 +1319,7 @@
     {
       "zona": "Centro",
       "tienda": "FLORIDA",
-      "coord": "Mijail Alvarez",
+      "coord": "Oscar Rodriguez",
       "semanas": {
         "1": {
           "reporto": true,
@@ -1306,7 +1356,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1353,7 +1405,8 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "Reoxigenación visual"
         },
         "8": {
           "reporto": "pendiente"
@@ -1400,7 +1453,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1445,7 +1500,9 @@
           "nov": "Incapacidad"
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "17/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1494,7 +1551,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "18/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1541,7 +1600,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1588,7 +1649,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1634,7 +1697,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1681,7 +1746,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1728,7 +1795,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1774,7 +1843,9 @@
           "cierre100": true
         },
         "7": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/06/2026",
+          "cierre100": true
         },
         "8": {
           "reporto": "pendiente"
@@ -1811,7 +1882,8 @@
         202,
         190,
         181,
-        15
+        15,
+        184
       ]
     },
     {
@@ -1841,6 +1913,7 @@
         79,
         80,
         78,
+        77,
         77,
         77
       ]
@@ -1873,7 +1946,8 @@
         50,
         50,
         48,
-        50
+        50,
+        49
       ]
     },
     {
@@ -1904,7 +1978,8 @@
         120,
         121,
         121,
-        121
+        121,
+        120
       ]
     },
     {
@@ -1935,7 +2010,8 @@
         79,
         79,
         78,
-        79
+        79,
+        76
       ]
     },
     {
@@ -1959,6 +2035,7 @@
         43,
         46,
         46,
+        45,
         45,
         45,
         45,
@@ -1997,7 +2074,8 @@
         122,
         120,
         108,
-        110
+        110,
+        114
       ]
     },
     {
@@ -2028,7 +2106,8 @@
         130,
         132,
         114,
-        117
+        117,
+        116
       ]
     },
     {
@@ -2059,7 +2138,8 @@
         109,
         114,
         114,
-        110
+        110,
+        99
       ]
     },
     {
@@ -2090,7 +2170,8 @@
         50,
         50,
         null,
-        57
+        57,
+        45
       ]
     },
     {
@@ -2121,7 +2202,8 @@
         122,
         110,
         118,
-        120
+        120,
+        117
       ]
     },
     {
@@ -2152,6 +2234,7 @@
         172,
         176,
         217,
+        177,
         177
       ]
     },
@@ -2183,6 +2266,7 @@
         137,
         144,
         145,
+        147,
         147
       ]
     },
@@ -2214,7 +2298,8 @@
         153,
         159,
         163,
-        162
+        162,
+        165
       ]
     },
     {
@@ -2238,6 +2323,7 @@
         72,
         72,
         63,
+        72,
         72,
         72,
         72,
@@ -2276,7 +2362,8 @@
         81,
         79,
         88,
-        82
+        82,
+        81
       ]
     },
     {
@@ -2307,7 +2394,8 @@
         176,
         176,
         176,
-        172
+        172,
+        174
       ]
     },
     {
@@ -2337,6 +2425,7 @@
         80,
         80,
         80,
+        83,
         83,
         83
       ]
@@ -2369,7 +2458,8 @@
         185,
         184,
         185,
-        184
+        184,
+        185
       ]
     },
     {
@@ -2400,7 +2490,8 @@
         248,
         252,
         247,
-        241
+        241,
+        253
       ]
     },
     {
@@ -2431,6 +2522,7 @@
         96,
         98,
         92,
+        98,
         98
       ]
     }
