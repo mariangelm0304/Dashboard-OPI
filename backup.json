@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-06-22T15:36:13.046Z",
+  "fecha": "2026-07-01T16:20:38.499Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -36,7 +36,8 @@
           "fecha": "19/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "26/06/2026"
         }
       }
     },
@@ -74,7 +75,8 @@
           "fecha": "18/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/06/2026"
         }
       }
     },
@@ -112,7 +114,8 @@
           "fecha": "19/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "26/06/2026"
         }
       }
     },
@@ -150,7 +153,8 @@
           "fecha": "18/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/06/2026"
         }
       }
     },
@@ -188,7 +192,8 @@
           "fecha": "20/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/06/2026"
         }
       }
     },
@@ -227,7 +232,9 @@
           "nov": "VACACIONES"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "VACACIONES"
         }
       }
     },
@@ -265,7 +272,8 @@
           "fecha": "20/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "27/06/2026"
         }
       }
     },
@@ -309,7 +317,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -348,7 +357,9 @@
           "nov": "VACACIONES"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "VACACIONES"
         }
       }
     },
@@ -386,7 +397,8 @@
           "fecha": "19/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "26/06/2026"
         }
       }
     },
@@ -430,7 +442,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -468,7 +481,8 @@
           "fecha": "20/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "27/06/2026"
         }
       }
     },
@@ -506,7 +520,8 @@
           "fecha": "20/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/06/2026"
         }
       }
     },
@@ -550,7 +565,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -588,7 +604,8 @@
           "fecha": "18/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "27/06/2026"
         }
       }
     },
@@ -632,7 +649,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -676,7 +694,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -714,7 +733,8 @@
           "fecha": "19/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "30/06/2026"
         }
       }
     },
@@ -752,7 +772,8 @@
           "fecha": "17/06/2026"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/06/2026"
         }
       }
     },
@@ -793,7 +814,8 @@
           "nov": "No envió reporte semana 1"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "27/06/2026"
         }
       }
     },
@@ -837,7 +859,8 @@
           "nov": "Tienda sin técnico asignado"
         },
         "8": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     }
@@ -888,7 +911,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -937,7 +962,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -984,7 +1011,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1036,7 +1065,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1073,7 +1104,8 @@
           "nov": "CAPACITACIÓN"
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "CAPACITACIÓN"
         }
       }
     },
@@ -1124,7 +1156,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1175,7 +1209,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1216,7 +1252,8 @@
           "nov": "INCAPACIDAD"
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "INCAPACIDAD"
         }
       }
     },
@@ -1262,7 +1299,8 @@
           "nov": "Vacaciones"
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "VACACIONES"
         }
       }
     },
@@ -1312,7 +1350,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1361,7 +1401,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1409,7 +1451,9 @@
           "nov": "Reoxigenación visual"
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1458,7 +1502,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1505,7 +1551,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1556,7 +1604,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1605,7 +1655,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1654,7 +1706,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1702,7 +1756,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1751,7 +1807,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1800,7 +1858,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1848,7 +1908,9 @@
           "cierre100": true
         },
         "8": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     }
@@ -1883,7 +1945,8 @@
         190,
         181,
         15,
-        184
+        184,
+        187
       ]
     },
     {
@@ -1915,7 +1978,8 @@
         78,
         77,
         77,
-        77
+        77,
+        78
       ]
     },
     {
@@ -1947,6 +2011,7 @@
         50,
         48,
         50,
+        49,
         49
       ]
     },
@@ -1979,7 +2044,8 @@
         121,
         121,
         121,
-        120
+        120,
+        121
       ]
     },
     {
@@ -2011,7 +2077,8 @@
         79,
         78,
         79,
-        76
+        77,
+        78
       ]
     },
     {
@@ -2035,6 +2102,7 @@
         43,
         46,
         46,
+        45,
         45,
         45,
         45,
@@ -2075,7 +2143,8 @@
         120,
         108,
         110,
-        114
+        114,
+        112
       ]
     },
     {
@@ -2107,7 +2176,8 @@
         132,
         114,
         117,
-        116
+        116,
+        118
       ]
     },
     {
@@ -2139,7 +2209,8 @@
         114,
         114,
         110,
-        99
+        99,
+        100
       ]
     },
     {
@@ -2171,7 +2242,8 @@
         50,
         null,
         57,
-        45
+        45,
+        41
       ]
     },
     {
@@ -2203,7 +2275,8 @@
         110,
         118,
         120,
-        117
+        117,
+        118
       ]
     },
     {
@@ -2235,7 +2308,8 @@
         176,
         217,
         177,
-        177
+        177,
+        181
       ]
     },
     {
@@ -2267,7 +2341,8 @@
         144,
         145,
         147,
-        147
+        147,
+        146
       ]
     },
     {
@@ -2299,7 +2374,8 @@
         159,
         163,
         162,
-        165
+        165,
+        163
       ]
     },
     {
@@ -2323,6 +2399,7 @@
         72,
         72,
         63,
+        72,
         72,
         72,
         72,
@@ -2363,7 +2440,8 @@
         79,
         88,
         82,
-        81
+        81,
+        82
       ]
     },
     {
@@ -2395,6 +2473,7 @@
         176,
         176,
         172,
+        174,
         174
       ]
     },
@@ -2427,7 +2506,8 @@
         80,
         83,
         83,
-        83
+        83,
+        80
       ]
     },
     {
@@ -2459,7 +2539,8 @@
         184,
         185,
         184,
-        185
+        185,
+        182
       ]
     },
     {
@@ -2491,7 +2572,8 @@
         252,
         247,
         241,
-        253
+        253,
+        249
       ]
     },
     {
@@ -2523,7 +2605,8 @@
         98,
         92,
         98,
-        98
+        98,
+        45
       ]
     }
   ],
