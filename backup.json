@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-07-01T16:20:38.499Z",
+  "fecha": "2026-07-09T19:50:45.135Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -1077,7 +1077,7 @@
       "coord": "Kevin Gutierrez",
       "semanas": {
         "1": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "2": {
           "reporto": "pendiente"
@@ -1218,7 +1218,7 @@
     {
       "zona": "Bogotá",
       "tienda": "AMERICAS",
-      "coord": "Alvaro Gutierrez",
+      "coord": "Francisco Colorado",
       "semanas": {
         "1": {
           "reporto": true,
