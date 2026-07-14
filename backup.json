@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-07-13T21:32:18.132Z",
+  "fecha": "2026-07-14T13:10:14.993Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -1464,7 +1464,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "nov": "A ESPERA DEL RENOVACIÓN CONTRATO"
         },
         "11": {
           "reporto": "pendiente"
@@ -1652,7 +1653,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "nov": "INCAPACIDAD"
         },
         "11": {
           "reporto": "pendiente"
@@ -1971,7 +1973,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "bodega": "VACACIONES"
         },
         "11": {
           "reporto": "pendiente"
@@ -2032,7 +2035,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "bodega": "VACACIONES"
         },
         "11": {
           "reporto": "pendiente"
@@ -2162,7 +2166,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "bodega": "VACACIONES"
         },
         "11": {
           "reporto": "pendiente"
@@ -2419,7 +2424,7 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": false
         },
         "11": {
           "reporto": "pendiente"
@@ -2481,7 +2486,8 @@
           "reporto": "pendiente"
         },
         "10": {
-          "reporto": true
+          "reporto": true,
+          "bodega": "VACACIONES"
         },
         "11": {
           "reporto": "pendiente"
@@ -2630,7 +2636,7 @@
         120,
         121,
         null,
-        null
+        109
       ]
     },
     {
