@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-07-21T15:54:33.122Z",
+  "fecha": "2026-07-27T13:04:56.168Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -53,7 +53,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -107,7 +108,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -161,7 +163,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/07/2026"
         }
       }
     },
@@ -215,7 +218,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -269,7 +273,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -327,7 +332,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -381,7 +387,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -441,7 +448,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -497,7 +505,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -551,7 +560,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/07/2026"
         }
       }
     },
@@ -611,7 +621,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -665,7 +676,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "25/07/2026"
         }
       }
     },
@@ -719,7 +731,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -779,7 +792,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -833,7 +847,9 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "amarillo",
+          "fecha": "—",
+          "nov": "VACACIONES"
         }
       }
     },
@@ -893,7 +909,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -953,7 +970,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     },
@@ -1007,7 +1025,8 @@
           "fecha": "17/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -1061,7 +1080,8 @@
           "fecha": "16/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "24/07/2026"
         }
       }
     },
@@ -1118,7 +1138,8 @@
           "fecha": "18/07/2026"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "26/07/2026"
         }
       }
     },
@@ -1178,7 +1199,8 @@
           "fecha": "—"
         },
         "12": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         }
       }
     }
@@ -1247,7 +1269,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1314,7 +1338,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1379,7 +1405,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1449,7 +1477,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1501,7 +1531,8 @@
           "nov": "NOVEDAD"
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "CAMBIO DE CONTRATO"
         }
       }
     },
@@ -1570,7 +1601,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1639,7 +1672,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1696,7 +1731,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1759,7 +1796,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1827,7 +1866,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1894,7 +1935,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -1959,7 +2002,9 @@
           "nov": "VACACIONES"
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2025,7 +2070,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2089,7 +2136,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "26/07/2026",
+          "cierre100": true
         }
       }
     },
@@ -2158,7 +2207,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2223,7 +2274,9 @@
           "nov": "VACACIONES"
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2290,7 +2343,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "25/07/2026",
+          "cierre100": true
         }
       }
     },
@@ -2356,7 +2411,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2423,7 +2480,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2488,7 +2547,9 @@
           "cierre100": true
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "100%",
+          "cierre100": true
         }
       }
     },
@@ -2552,7 +2613,8 @@
           "nov": "VACACIONES"
         },
         "12": {
-          "reporto": "pendiente"
+          "reporto": "vacaciones",
+          "nov": "VACACIONES"
         }
       }
     }
@@ -2591,7 +2653,8 @@
         187,
         174,
         180,
-        183
+        183,
+        188
       ]
     },
     {
@@ -2627,6 +2690,7 @@
         78,
         77,
         76,
+        75,
         75
       ]
     },
@@ -2663,7 +2727,8 @@
         49,
         null,
         45,
-        42
+        42,
+        44
       ]
     },
     {
@@ -2699,7 +2764,8 @@
         121,
         null,
         109,
-        103
+        103,
+        121
       ]
     },
     {
@@ -2735,7 +2801,8 @@
         78,
         79,
         77,
-        75
+        75,
+        74
       ]
     },
     {
@@ -2771,6 +2838,7 @@
         45,
         45,
         44,
+        45,
         45
       ]
     },
@@ -2807,7 +2875,8 @@
         112,
         118,
         121,
-        116
+        116,
+        120
       ]
     },
     {
@@ -2843,7 +2912,8 @@
         118,
         117,
         118,
-        117
+        117,
+        112
       ]
     },
     {
@@ -2879,7 +2949,8 @@
         100,
         null,
         107,
-        111
+        111,
+        106
       ]
     },
     {
@@ -2915,7 +2986,8 @@
         41,
         39,
         43,
-        47
+        47,
+        48
       ]
     },
     {
@@ -2951,7 +3023,8 @@
         118,
         113,
         115,
-        107
+        107,
+        116
       ]
     },
     {
@@ -2984,6 +3057,7 @@
         217,
         177,
         177,
+        181,
         181,
         181,
         181,
@@ -3023,7 +3097,8 @@
         146,
         133,
         127,
-        128
+        128,
+        120
       ]
     },
     {
@@ -3059,7 +3134,8 @@
         163,
         156,
         157,
-        159
+        159,
+        161
       ]
     },
     {
@@ -3095,7 +3171,8 @@
         72,
         72,
         51,
-        68
+        68,
+        66
       ]
     },
     {
@@ -3131,7 +3208,8 @@
         82,
         75,
         77,
-        80
+        80,
+        52
       ]
     },
     {
@@ -3167,6 +3245,7 @@
         174,
         171,
         174,
+        161,
         161
       ]
     },
@@ -3203,7 +3282,8 @@
         80,
         80,
         78,
-        79
+        79,
+        76
       ]
     },
     {
@@ -3239,6 +3319,7 @@
         182,
         185,
         180,
+        190,
         190
       ]
     },
@@ -3275,7 +3356,8 @@
         249,
         256,
         261,
-        260
+        260,
+        255
       ]
     },
     {
@@ -3311,6 +3393,7 @@
         45,
         91,
         92,
+        93,
         93
       ]
     }
