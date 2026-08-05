@@ -413,7 +413,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--g9);min-hei
           <div class="gcenter"><div class="gval" id="gval-cal">0%</div><div class="glbl" id="glbl-cal">Con reporte / elegibles</div></div>
         </div>
         <div class="gaxis"><span>0%</span><span>100%</span></div>
-        <div style="text-align:center;margin-top:6px;font-size:10px;color:var(--g5)"><i class="ti ti-calculator"></i> Con reporte / (Total − Sin técnico − Pendientes)</div>
+        <div style="text-align:center;margin-top:6px;font-size:10px;color:var(--g5)"><i class="ti ti-calculator"></i> Con reporte / (Total − Sin técnico − Pendientes − Novedades)</div>
       </div>
     </div>
   </div>
@@ -854,6 +854,22 @@ const C = {
   rd:'#B12530', g1:'#F3F4F6', g5:'#6B7280', g9:'#1F2937'
 };
 
+// ----------------------------------------------------------------
+// Umbrales de cumplimiento: >=80% verde | 60-79.9% amarillo | <60% rojo
+// ----------------------------------------------------------------
+const UMBRAL_CUMPL_OK = 80;
+const UMBRAL_CUMPL_MEDIO = 60;
+function colorCumpl(pct) {
+  if (pct >= UMBRAL_CUMPL_OK) return C.verde;
+  if (pct >= UMBRAL_CUMPL_MEDIO) return C.am;
+  return C.rojo;
+}
+function colorCumplTexto(pct) {
+  if (pct >= UMBRAL_CUMPL_OK) return C['verde-d'];
+  if (pct >= UMBRAL_CUMPL_MEDIO) return C['am-d'];
+  return C['rojo-d'];
+}
+
 function pctBarra(est) {
   if (est==='verde') return 100;
   if (est==='amarillo'||est==='naranja') return 60;
@@ -996,8 +1012,10 @@ function renderInv() {
   });
 
   // Gauge
-  dibujarGauge('gauge-inv', pct, C.rojo);
-  document.getElementById('gval-inv').textContent = pct.toFixed(1).replace('.',',')+' %';
+  dibujarGauge('gauge-inv', pct, colorCumpl(pct));
+  const _gvInv = document.getElementById('gval-inv');
+  _gvInv.textContent = pct.toFixed(1).replace('.',',')+' %';
+  _gvInv.style.color = colorCumplTexto(pct);
   document.getElementById('glbl-inv').textContent = rep+' reportaron / '+eleg+' elegibles';
 
   // Novedades
@@ -1028,7 +1046,9 @@ function renderCal() {
   const nov = cons.filter(t=>t.e==='amarillo').length;
   const pend = cons.filter(t=>t.e==='pendiente').length;
   const eleg = total - sinTec - pend;
-  const pct = eleg>0 ? Math.round(conRep/eleg*1000)/10 : 0;
+  // Cumplimiento: excluye Sin tecnico, Pendientes y Novedades
+  const elegCump = total - sinTec - pend - nov;
+  const pct = elegCump>0 ? Math.round(conRep/elegCump*1000)/10 : 0;
 
   const _fcmesId = parseInt(document.getElementById('f-mes')?.value||1);
   const _fcper = periodos.find(p=>p.id===_fcmesId)||periodos[0];
@@ -1086,9 +1106,11 @@ function renderCal() {
                x:{grid:{display:false},ticks:{font:{size:9,weight:'600'}}}}}
   });
 
-  dibujarGauge('gauge-cal', pct, C.rojo);
-  document.getElementById('gval-cal').textContent = pct.toFixed(1).replace('.',',')+' %';
-  document.getElementById('glbl-cal').textContent = conRep+' con reporte / '+eleg+' elegibles';
+  dibujarGauge('gauge-cal', pct, colorCumpl(pct));
+  const _gvCal = document.getElementById('gval-cal');
+  _gvCal.textContent = pct.toFixed(1).replace('.',',')+' %';
+  _gvCal.style.color = colorCumplTexto(pct);
+  document.getElementById('glbl-cal').textContent = conRep+' con reporte / '+elegCump+' elegibles';
 
   const novs = [];
   cons.forEach(t=>{
