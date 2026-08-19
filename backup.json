@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-08-18T16:49:21.241Z",
+  "fecha": "2026-08-19T13:50:14.051Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -1574,7 +1574,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -1657,7 +1659,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -1738,7 +1742,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -1824,7 +1830,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -1890,7 +1898,9 @@
           "nov": "NOVEDAD"
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -1975,7 +1985,8 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "nov": "VISITA DE AUDITOTÍA"
         },
         "15": {
           "reporto": "pendiente"
@@ -2060,7 +2071,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2133,7 +2146,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "13/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2212,7 +2227,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2296,7 +2313,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2379,7 +2398,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2460,7 +2481,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2541,7 +2564,8 @@
           "nov": "VISITA AUDITORÍA"
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "nov": "VISITA DE AUDITORÍA"
         },
         "15": {
           "reporto": "pendiente"
@@ -2620,7 +2644,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2705,7 +2731,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2786,7 +2814,7 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2869,7 +2897,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "14/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -2951,7 +2981,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -3034,7 +3066,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "15/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -3115,7 +3149,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "17/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
@@ -3194,7 +3230,9 @@
           "cierre100": true
         },
         "14": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "17/08/2026",
+          "cierre100": true
         },
         "15": {
           "reporto": "pendiente"
