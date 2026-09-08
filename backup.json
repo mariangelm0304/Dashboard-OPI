@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-09-07T14:18:23.418Z",
+  "fecha": "2026-09-08T13:00:37.246Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -1103,8 +1103,8 @@
           "fecha": "100%"
         },
         "17": {
-          "estado": "rojo-dark",
-          "fecha": "—"
+          "estado": "verde",
+          "fecha": "4/09/2026"
         },
         "18": {
           "estado": "pendiente"
@@ -2302,7 +2302,8 @@
           "cierre100": true
         },
         "17": {
-          "reporto": false
+          "reporto": false,
+          "cierre100": false
         },
         "18": {
           "reporto": "pendiente"
