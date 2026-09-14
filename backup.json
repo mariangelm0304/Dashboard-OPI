@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-09-14T19:28:53.190Z",
+  "fecha": "2026-09-14T19:37:38.172Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -2335,7 +2335,7 @@
           "cierre100": false
         },
         "18": {
-          "reporto": true
+          "reporto": false
         },
         "19": {
           "reporto": "pendiente"
@@ -3255,7 +3255,7 @@
           "cierre100": true
         },
         "18": {
-          "reporto": true
+          "reporto": false
         },
         "19": {
           "reporto": "pendiente"
