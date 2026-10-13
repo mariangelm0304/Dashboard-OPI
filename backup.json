@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-10-13T20:15:16.284Z",
+  "fecha": "2026-10-13T20:45:00.533Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -2163,8 +2163,8 @@
           "fecha": "04/10/2026"
         },
         "22": {
-          "estado": "rojo-dark",
-          "fecha": "—"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
