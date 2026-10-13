@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-10-05T13:21:58.826Z",
+  "fecha": "2026-10-13T20:15:16.284Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -93,7 +93,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -193,7 +194,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -296,7 +298,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -396,7 +399,8 @@
           "fecha": "01/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -497,7 +501,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -601,7 +606,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -701,7 +707,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -807,7 +814,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -909,7 +917,8 @@
           "fecha": "03/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1009,7 +1018,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1115,7 +1125,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -1211,10 +1222,12 @@
           "fecha": "26/09/2026"
         },
         "21": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1314,7 +1327,8 @@
           "fecha": "03/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1420,7 +1434,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -1521,7 +1536,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1627,7 +1643,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -1733,7 +1750,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -1746,7 +1764,7 @@
     {
       "zona": "Bogotá",
       "tienda": "AMERICAS",
-      "tecnico": "Sin Técnico",
+      "tecnico": "Juan Restrepo",
       "semanas": {
         "1": {
           "estado": "verde",
@@ -1833,7 +1851,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -1933,7 +1952,8 @@
           "fecha": "—"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "9/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -2036,7 +2056,8 @@
           "fecha": "02/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "10/10/2026"
         },
         "23": {
           "estado": "pendiente"
@@ -2142,7 +2163,8 @@
           "fecha": "04/10/2026"
         },
         "22": {
-          "estado": "pendiente"
+          "estado": "rojo-dark",
+          "fecha": "—"
         },
         "23": {
           "estado": "pendiente"
@@ -2262,10 +2284,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2383,10 +2407,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2502,10 +2528,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2626,10 +2654,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2726,10 +2756,10 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": false
         },
         "23": {
           "reporto": "pendiente"
@@ -2848,10 +2878,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2971,10 +3003,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -2987,7 +3021,7 @@
     {
       "zona": "Bogotá",
       "tienda": "AMERICAS",
-      "coord": "Álvaro Gutiérrez",
+      "coord": "Oscar Pabón",
       "semanas": {
         "1": {
           "reporto": true,
@@ -3082,10 +3116,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3098,7 +3134,7 @@
     {
       "zona": "Bogotá",
       "tienda": "BOGOTA NORTE",
-      "coord": "Miguel Buitrago",
+      "coord": "Álvaro Gutiérrez",
       "semanas": {
         "1": {
           "reporto": true,
@@ -3199,10 +3235,11 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": false,
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3320,10 +3357,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3440,10 +3479,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3558,10 +3599,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3675,10 +3718,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3790,10 +3835,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -3913,10 +3960,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4030,10 +4079,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4150,10 +4201,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4270,10 +4323,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4391,10 +4446,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4509,10 +4566,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4626,10 +4685,12 @@
           "cierre100": true
         },
         "21": {
-          "reporto": "pendiente"
+          "reporto": true
         },
         "22": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "12/10/2026",
+          "cierre100": true
         },
         "23": {
           "reporto": "pendiente"
@@ -4685,7 +4746,8 @@
         197,
         203,
         199,
-        196
+        196,
+        203
       ]
     },
     {
@@ -4732,7 +4794,8 @@
         77,
         78,
         78,
-        80
+        80,
+        79
       ]
     },
     {
@@ -4779,7 +4842,8 @@
         49,
         49,
         49,
-        48
+        48,
+        49
       ]
     },
     {
@@ -4826,7 +4890,8 @@
         116,
         121,
         121,
-        120
+        120,
+        119
       ]
     },
     {
@@ -4873,7 +4938,8 @@
         74,
         75,
         80,
-        80
+        80,
+        79
       ]
     },
     {
@@ -4920,7 +4986,8 @@
         45,
         45,
         44,
-        45
+        45,
+        46
       ]
     },
     {
@@ -4967,7 +5034,8 @@
         116,
         116,
         117,
-        115
+        115,
+        113
       ]
     },
     {
@@ -5014,7 +5082,8 @@
         113,
         117,
         121,
-        112
+        112,
+        122
       ]
     },
     {
@@ -5061,7 +5130,8 @@
         115,
         105,
         118,
-        116
+        116,
+        114
       ]
     },
     {
@@ -5108,7 +5178,8 @@
         47,
         46,
         46,
-        45
+        45,
+        47
       ]
     },
     {
@@ -5155,7 +5226,8 @@
         109,
         109,
         109,
-        null
+        null,
+        102
       ]
     },
     {
@@ -5202,7 +5274,8 @@
         190,
         224,
         253,
-        336
+        336,
+        283
       ]
     },
     {
@@ -5249,7 +5322,8 @@
         148,
         151,
         151,
-        141
+        141,
+        143
       ]
     },
     {
@@ -5296,7 +5370,8 @@
         163,
         162,
         166,
-        164
+        164,
+        166
       ]
     },
     {
@@ -5336,6 +5411,7 @@
         66,
         72,
         72,
+        69,
         69,
         69,
         69,
@@ -5390,7 +5466,8 @@
         54,
         52,
         53,
-        51
+        51,
+        53
       ]
     },
     {
@@ -5437,6 +5514,7 @@
         178,
         182,
         179,
+        180,
         180
       ]
     },
@@ -5483,6 +5561,7 @@
         82,
         81,
         81,
+        83,
         83,
         83
       ]
@@ -5531,7 +5610,8 @@
         175,
         174,
         183,
-        180
+        180,
+        183
       ]
     },
     {
@@ -5578,7 +5658,8 @@
         251,
         250,
         250,
-        248
+        248,
+        251
       ]
     },
     {
@@ -5625,7 +5706,8 @@
         89,
         92,
         92,
-        89
+        89,
+        91
       ]
     }
   ],
