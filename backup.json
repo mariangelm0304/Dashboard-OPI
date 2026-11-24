@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fecha": "2026-11-19T14:23:33.214Z",
+  "fecha": "2026-11-24T12:53:46.695Z",
   "calidad": [
     {
       "zona": "Atlántico",
@@ -112,7 +112,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -228,7 +229,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -347,7 +349,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "21/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -463,7 +466,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "21/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -580,7 +584,8 @@
           "fecha": "11/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -700,7 +705,8 @@
           "fecha": "13/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "21/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -816,7 +822,8 @@
           "fecha": "13/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -938,7 +945,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -1056,7 +1064,8 @@
           "fecha": "11/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "18/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -1172,7 +1181,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -1294,7 +1304,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -1411,7 +1422,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -1528,7 +1540,8 @@
           "nov": "VACACIONES"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -1650,7 +1663,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -1767,7 +1781,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "21/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -1889,7 +1904,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -2011,7 +2027,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -2127,7 +2144,8 @@
           "fecha": "14/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "20/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -2243,7 +2261,8 @@
           "fecha": "—"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "rojo",
+          "fecha": "—"
         },
         "28": {
           "estado": "pendiente"
@@ -2362,7 +2381,8 @@
           "fecha": "17/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "19/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -2484,7 +2504,8 @@
           "fecha": "13/11/2026"
         },
         "27": {
-          "estado": "pendiente"
+          "estado": "verde",
+          "fecha": "22/11/2026"
         },
         "28": {
           "estado": "pendiente"
@@ -2627,7 +2648,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -2768,7 +2791,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -2907,7 +2932,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3051,7 +3078,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3169,7 +3198,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3311,7 +3342,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3454,7 +3487,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3585,7 +3620,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "18/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3721,7 +3758,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -3862,7 +3901,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4002,7 +4043,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4140,7 +4183,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4277,7 +4322,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "23/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4412,7 +4459,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4555,7 +4604,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4692,7 +4743,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4832,7 +4885,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "19/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -4972,7 +5027,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "18/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -5113,7 +5170,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -5251,7 +5310,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -5388,7 +5449,9 @@
           "cierre100": true
         },
         "27": {
-          "reporto": "pendiente"
+          "reporto": true,
+          "fecha": "20/11/2026",
+          "cierre100": true
         },
         "28": {
           "reporto": "pendiente"
@@ -5447,7 +5510,8 @@
         205,
         203,
         202,
-        204
+        204,
+        208
       ]
     },
     {
@@ -5500,6 +5564,7 @@
         77,
         78,
         78,
+        79,
         79
       ]
     },
@@ -5553,6 +5618,7 @@
         48,
         47,
         42,
+        43,
         43
       ]
     },
@@ -5606,7 +5672,8 @@
         119,
         117,
         119,
-        118
+        118,
+        120
       ]
     },
     {
@@ -5658,6 +5725,7 @@
         75,
         72,
         76,
+        75,
         75,
         75
       ]
@@ -5712,6 +5780,7 @@
         46,
         44,
         45,
+        45,
         45
       ]
     },
@@ -5765,7 +5834,8 @@
         108,
         109,
         114,
-        109
+        109,
+        116
       ]
     },
     {
@@ -5818,7 +5888,8 @@
         113,
         117,
         119,
-        116
+        116,
+        118
       ]
     },
     {
@@ -5871,7 +5942,8 @@
         null,
         null,
         103,
-        113
+        113,
+        95
       ]
     },
     {
@@ -5924,7 +5996,8 @@
         47,
         47,
         47,
-        46
+        46,
+        47
       ]
     },
     {
@@ -5977,7 +6050,8 @@
         95,
         97,
         98,
-        98
+        98,
+        99
       ]
     },
     {
@@ -6030,7 +6104,8 @@
         278,
         310,
         337,
-        331
+        331,
+        248
       ]
     },
     {
@@ -6083,7 +6158,8 @@
         149,
         149,
         145,
-        151
+        151,
+        144
       ]
     },
     {
@@ -6136,7 +6212,8 @@
         163,
         162,
         156,
-        159
+        159,
+        169
       ]
     },
     {
@@ -6176,6 +6253,7 @@
         66,
         72,
         72,
+        69,
         69,
         69,
         69,
@@ -6242,7 +6320,8 @@
         53,
         52,
         47,
-        51
+        51,
+        50
       ]
     },
     {
@@ -6289,6 +6368,7 @@
         178,
         182,
         179,
+        180,
         180,
         180,
         180,
@@ -6348,6 +6428,7 @@
         83,
         83,
         82,
+        82,
         82
       ]
     },
@@ -6401,7 +6482,8 @@
         183,
         177,
         182,
-        179
+        179,
+        172
       ]
     },
     {
@@ -6454,6 +6536,7 @@
         246,
         242,
         242,
+        245,
         245
       ]
     },
@@ -6507,7 +6590,8 @@
         90,
         85,
         82,
-        91
+        91,
+        85
       ]
     }
   ],
