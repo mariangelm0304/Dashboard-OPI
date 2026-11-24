@@ -710,6 +710,8 @@ const calidad = [
     semanas: {1:{estado:'rojo-dark',fecha:'—',nov:'No envió reporte semana 1'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
   {zona:'Bogotá', tienda:'CRA 30', tecnico:'Sin Técnico',
     semanas: {1:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 2:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 3:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}, 4:{estado:'rojo',fecha:'—',nov:'Tienda sin técnico asignado'}}},
+  {zona:'Bogotá', tienda:'SANTA BARBARA', tecnico:'Por asignar',
+    semanas: {1:{estado:'pendiente'}, 2:{estado:'pendiente'}, 3:{estado:'pendiente'}, 4:{estado:'pendiente'}}},
 ];
 
 const inventario = [
@@ -755,6 +757,8 @@ const inventario = [
     semanas: {1:{reporto:true,fecha:'8/05/2026',bodega:'Bodega llena',cierre100:true,fotos:'Si'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
   {zona:'Bogotá', tienda:'CRA 30', coord:'Diego Valero',
     semanas: {1:{reporto:false,fotos:'No',nov:'Sin reporte y sin fotos'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
+  {zona:'Bogotá', tienda:'SANTA BARBARA', coord:'Por asignar',
+    semanas: {1:{reporto:'pendiente'}, 2:{reporto:'pendiente'}, 3:{reporto:'pendiente'}, 4:{reporto:'pendiente'}}},
 ];
 
 const pistoleo = [
@@ -779,6 +783,7 @@ const pistoleo = [
   {ag:'H1', nombre:'JAMAR EL EDEN', zona:'Bogotá', vals:[null,187,181,183,182,184,182,186,186,185,186,190,188,188,190,185,185,182,185]},
   {ag:'H4', nombre:'JAMAR CRA 30', zona:'Bogotá', vals:[null,267,262,258,263,257,252,260,249,248,239,243,249,249,253,244,249,249,226]},
   {ag:'XX', nombre:'HIPERJAMAR', zona:'Atlántico', vals:[null,null,96,96,98,97,99,101,100,116,181,86,91,88,90,91,92,94,90]},
+  {ag:'SB', nombre:'SANTA BARBARA', zona:'Bogotá', vals:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},
 ];
 
 // ================================================================
@@ -795,6 +800,38 @@ const DATA_VERSION = '6838bb5c5a94';
 const periodos = [
   { id: 1, nombre: 'Mayo 2026',   sems: [1, 2, 3, 4] }
 ];
+
+// ================================================================
+// TIENDAS NUEVAS
+// Se agregan solas a las tres actividades aunque los datos vengan de
+// backup.json, de localStorage o de un respaldo importado sin ellas.
+// ================================================================
+const TIENDAS_NUEVAS = [
+  { tienda:'SANTA BARBARA', zona:'Bogotá', tecnico:'Por asignar', coord:'Por asignar',
+    ag:'SB', nombrePist:'SANTA BARBARA' }
+];
+
+function asegurarTiendasNuevas() {
+  const sems = todasSemsActivas();
+  const numPist = pistoleo.reduce((m,t)=>Math.max(m,(t.vals||[]).length),0);
+  TIENDAS_NUEVAS.forEach(n => {
+    // Bitácora de calidad
+    let c = calidad.find(t=>t.tienda===n.tienda);
+    if (!c) { c = {zona:n.zona, tienda:n.tienda, tecnico:n.tecnico, semanas:{}}; calidad.push(c); }
+    if (!c.semanas) c.semanas = {};
+    sems.forEach(s=>{ if (!c.semanas[s]) c.semanas[s] = {estado:'pendiente'}; });
+    // Inventario cíclico
+    let i = inventario.find(t=>t.tienda===n.tienda);
+    if (!i) { i = {zona:n.zona, tienda:n.tienda, coord:n.coord, semanas:{}}; inventario.push(i); }
+    if (!i.semanas) i.semanas = {};
+    sems.forEach(s=>{ if (!i.semanas[s]) i.semanas[s] = {reporto:'pendiente'}; });
+    // Pistoleo
+    let p = pistoleo.find(t=>t.ag===n.ag || t.nombre===n.nombrePist);
+    if (!p) { p = {ag:n.ag, nombre:n.nombrePist, zona:n.zona, vals:[]}; pistoleo.push(p); }
+    if (!Array.isArray(p.vals)) p.vals = [];
+    while (p.vals.length < numPist) p.vals.push(null);
+  });
+}
 
 function autoGuardar() {
   try {
@@ -1851,6 +1888,7 @@ function importarJSON(evt) {
       if (Array.isArray(raw.periodos) && raw.periodos.length) {
         periodos.length = 0; raw.periodos.forEach(p => periodos.push(p));
       }
+      asegurarTiendasNuevas();
 
       // Actualizar selector de semanas pistoleo
       const numSem = pistoleo[0].vals.length;
@@ -1922,6 +1960,9 @@ function toast(msg, isErr) {
 // ================================================================
 
 function finalizarInit() {
+  // Garantizar tiendas nuevas en las tres actividades
+  asegurarTiendasNuevas();
+  autoGuardar();
   // Sincronizar selector pistoleo con semanas actuales
   const numSem = pistoleo[0].vals.length;
   const selPist = document.getElementById('f-spist');
